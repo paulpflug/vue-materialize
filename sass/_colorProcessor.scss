@@ -1,0 +1,38 @@
+// Color Classes
+@each $color_name, $color in $colors {
+  $curr_color: map-get($included_colors, $color_name);
+  @if $curr_color {
+    @each $color_type, $color_value in $color {
+      @if index($curr_color, $color_type) {
+        @if $color_type == "base" {
+          .#{$color_name} {
+            background-color: $color_value !important;
+          }
+          .#{$color_name}-text {
+            color: $color_value !important;
+          }
+        }
+        @else {
+          .#{$color_name}.#{$color_type} {
+            background-color: $color_value !important;
+          }
+          .#{$color_name}-text.text-#{$color_type} {
+            color: $color_value !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Shade classes
+@each $color, $color_value in $shades {
+  @if map-has-key($included_colors, $color) {
+    .#{$color} {
+      background-color: $color_value !important;
+    }
+    .#{$color}-text {
+      color: $color_value !important;
+    }
+  }
+}
