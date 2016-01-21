@@ -1,3 +1,4 @@
+@charset "UTF-8";
 // Utility Color Classes
 
 //.success {
@@ -377,16 +378,19 @@ $colors: (
   @warn "Unknown `#{name}` in $colors.";
   @return null;
 }
+@mixin do($function-name, $args...) {
+  $i-am-never-used: call($function-name, $args...);
+}
 $included_colors: ();
 @function include-color($color, $type) {
   $curr_color: map-get($included_colors, $color);
   @if $curr_color {
     @if not index($curr_color, $type) {
       $curr_color: append($curr_color, $type);
-      $included_colors: map-merge($included_colors, $curr_color);
+      $included_colors: map-merge($included_colors, ($color:$curr_color)) !global;
     }
   } @else {
-    $included_colors: map-merge($included_colors, ($color:$type));
+    $included_colors: map-merge($included_colors, ($color:$type)) !global;
   }
-  @return $included_colors;
+  @return null;
 }

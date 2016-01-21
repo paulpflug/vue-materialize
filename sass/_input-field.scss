@@ -1,0 +1,89 @@
+// Styling for input field wrapper
+.input-field {
+  & > input,
+  & > textarea {
+    border: none;
+    border-bottom: 1px solid $input-border-color;
+    @include box-sizing(content-box);
+  }
+  // Disabled input style
+  &.disabled,
+  &.readonly {
+    & > label {
+      color: $input-disabled-color;
+    }
+    & > input,
+    & > textarea {
+      color: $input-disabled-color;
+      border-bottom: 1px dotted $input-disabled-color;
+    }
+  }
+  // Focused input style
+  &.focus {
+    & > i,
+    & > label {
+      color: $input-focus-color;
+    }
+    & > input,
+    & > textarea {
+      border-bottom: 1px solid $input-focus-color;
+      box-shadow: 0 1px 0 0 $input-focus-color;
+    }
+  }
+  // Valid Input Style
+  &.valid>input,
+  &.valid>input:focus,
+  &.valid>textarea,
+  &.valid>textarea:focus {
+    border-bottom: 1px solid $input-success-color;
+    box-shadow: 0 1px 0 0 $input-success-color;
+  }
+  // Custom Success Message
+  &.valid > label:after,
+  &.valid > input:focus + label:after,
+  &.valid>textarea:focus + label:after {
+    color: $input-success-color;
+  }
+  // Invalid Input Style
+  &.invalid>input,
+  &.invalid>input:focus,
+  &.invalid>textarea,
+  &.invalid>textarea:focus {
+    border-bottom: 1px solid $input-error-color;
+    box-shadow: 0 1px 0 0 $input-error-color;
+  }
+  // Custom Error message
+  &.invalid > label:after,
+  &.invalid > input:focus + label:after,
+  &.invalid>textarea:focus + label:after {
+    color: $input-error-color;
+  }
+  &> label {
+    color: $input-border-color;
+    left: 0;
+    @include transition(.2s ease-out);
+  }
+  &.active {
+    & > label {
+      font-size: $label-font-size;
+      @include transform(translateY(-140%));
+    }
+  }
+
+  // Prefix Icons
+  i {
+    @include transition(color .2s);
+  }
+  @media #{$medium-and-down} {
+    i ~ input {
+      width: 86%;
+      width: calc(100% - 3rem);
+    }
+  }
+  @media #{$small-and-down} {
+    i ~ input {
+      width: 80%;
+      width: calc(100% - 3rem);
+    }
+  }
+}

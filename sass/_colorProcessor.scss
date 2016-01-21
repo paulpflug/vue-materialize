@@ -1,3 +1,4 @@
+@charset "UTF-8";
 // Color Classes
 @each $color_name, $color in $colors {
   $curr_color: map-get($included_colors, $color_name);

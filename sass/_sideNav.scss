@@ -1,5 +1,6 @@
 .side-nav {
   background-color: $sidenav-bg-color;
+  @extend .z-depth-1;
   li {
     padding: 0 $sidenav-padding-right;
   }
