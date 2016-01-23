@@ -18,8 +18,7 @@
   "dependencies": {
     "vueify-insert-css": "^1.0.0",
     "velocity-animate": "^1.2.3",
-    "vue-mixins": "^0.0.2",
-    "vue-touch": "^0.1.2"
+    "vue-mixins": "^0.0.2"
   },
   "devDependencies": {
     "babel-core": "^6.4.0",

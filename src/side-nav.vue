@@ -1,12 +1,22 @@
 // out: ..
 <template lang="jade">
+drag-target(
+  v-ref:drag-target
+  v-bind:on-move="move"
+  v-bind:on-open="open"
+  v-bind:on-open-abort="hide"
+  v-bind:on-close="close"
+  v-bind:on-close-abort="show"
+  v-bind:max-open="menuWidth"
+  factor="2"
+  )
 ul.side-nav(
   v-el:nav
   @click="click"
   v-bind:style="style"
-  v-bind:class="{right-aligned: rightAligned,fixed: fixed}"
+  v-bind:class="{rightAligned:rightAligned,fixed:fixed}"
   )
-  //resizer(
+  //-resizer(
     v-if="resize"
     side="{{otherEdge()}}"
     parent-size-style="{{@style.width}}"
@@ -18,12 +28,13 @@ ul.side-nav(
 
 <script lang="coffee">
 overlay = null
-dragTarget = null
 Velocity = require("velocity-animate")
 module.exports =
+  components:
+    "drag-target": require('./drag-target')
   created: ->
     overlay = require('./overlay')(@$root.constructor)
-    dragTarget = require('./drag-target')(@$root.constructor)
+  el: -> document.createElement "div"
   #components:
   #  "resizer": require "./resizer"
   mixins:[
@@ -37,6 +48,7 @@ module.exports =
     #  default: false
     "menuWidth":
       type: Number
+      coerce: Number
       default: 240
     #"minWidth":
     #  type: Number
@@ -46,8 +58,16 @@ module.exports =
       default: "left"
     "closeOnClick":
       type: Boolean
+      coerce: (val) ->
+        if val == "true" or val == true
+          return true
+        return false
       default: true
     "fixed":
+      coerce: (val) ->
+        if val == "true" or val == true
+          return true
+        return false
       type: Boolean
       default: false
   data: ->
@@ -71,19 +91,27 @@ module.exports =
       @style.width = @menuWidth + "px"
       @style.right = undefined
       @style.left = undefined
-    show: ->
+    move: (position) ->
       if @edge == 'left'
-        Velocity @$el, {left: 0}, @veloOpts
+        @style.left = -@menuWidth+position+ "px"
         @style.right = undefined
       else
-        Velocity @$el, {right: 0}, @veloOpts
+        @style.right = -@menuWidth+position+ "px"
+        @style.left = undefined
+    show: ->
+      if @edge == 'left'
+        Velocity @$els.nav, {left: 0}, @veloOpts
+        @style.right = undefined
+      else
+        Velocity @$els.nav, {right: 0}, @veloOpts
         @style.left = undefined
     hide: (animate) ->
+      animate ?= true
       if animate
         if @edge == 'left'
-          Velocity @$el, {left: -1 * (@menuWidth + 10)}, @veloOpts
+          Velocity @$els.nav, {left: -1 * (@menuWidth + 10)}, @veloOpts
         else
-          Velocity @$el, {right: -1 * (@menuWidth + 10)}, @veloOpts
+          Velocity @$els.nav, {right: -1 * (@menuWidth + 10)}, @veloOpts
       else
         if @edge == 'left'
           @style.left =  -1 * (@menuWidth + 10) + "px"
@@ -95,8 +123,7 @@ module.exports =
       return if @menuOut
       @menuOut = true
       @setCss document.body, "overflow", "hidden"
-      dragTarget.$appendTo('body')
-      dragTarget.open(@edge)
+      @$refs.dragTarget.open(@edge)
       @show()
       @removeOverlayOnClick = overlay.addToClickStack =>
         @close()
@@ -112,7 +139,7 @@ module.exports =
       @setCss document.body, "overflow"
       overlay.close()
       @removeOverlayOnClick?()
-      dragTarget.close(@edge)
+      @$refs.dragTarget.close(@edge)
       if restoreNav == true
         @setFixed()
       else
@@ -125,8 +152,8 @@ module.exports =
 
   compiled: ->
     @style.width = @menuWidth + "px"
-    dragTarget.onClick = => @close()
-    dragTarget.close(@edge)
+    @$refs.dragTarget.onClick = => @close()
+    @$refs.dragTarget.close(@edge)
     @hide(false)
     if @fixed
       if window.innerWidth > 992
@@ -140,9 +167,9 @@ module.exports =
         else unless @menuOut
           @hide(false)
     @onClick = (e) ->
-      if (@closeOnClick && (e.target.parentElement == @$el or
-          e.target.parentElement.parentElement == @$el or
-          e.target.parentElement.parentElement.parentElement == @$el))
+      if (@closeOnClick && (e.target.parentElement == @$els.nav or
+          e.target.parentElement.parentElement == @$els.nav or
+          e.target.parentElement.parentElement.parentElement == @$els.nav))
         @close()
   #attached: ->
   #  if @minWidth <0
