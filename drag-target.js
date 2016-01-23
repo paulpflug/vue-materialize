@@ -10,6 +10,10 @@ module.exports = {
       "default": 1,
       coerce: Number
     },
+    "edge": {
+      type: String,
+      "default": "left"
+    },
     "onMove": {
       type: Function,
       required: true
@@ -48,9 +52,12 @@ module.exports = {
       }
     };
   },
+  compiled: function() {
+    return this.close();
+  },
   methods: {
     send: function(left) {
-      if (left) {
+      if ((this.opened && this.edge !== "left") || (!this.opened && this.edge === "left")) {
         this.style.right = void 0;
         return this.style.left = 0;
       } else {
@@ -58,17 +65,15 @@ module.exports = {
         return this.style.left = void 0;
       }
     },
-    open: function(edge) {
-      this.edge = edge;
+    open: function() {
       this.opened = true;
       this.style.width = this.width;
-      return this.send(edge !== "left");
+      return this.send();
     },
-    close: function(edge) {
-      this.edge = edge;
+    close: function() {
       this.opened = false;
       this.style.width = void 0;
-      return this.send(edge === "left");
+      return this.send();
     },
     onPan: function(event) {
       var dX;

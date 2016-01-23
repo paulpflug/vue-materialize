@@ -35,7 +35,6 @@ module.exports = {
       })(this);
     },
     closeAll: function() {
-      console.log("closing all");
       return this.closeAllBut()();
     }
   },

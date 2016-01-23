@@ -8,6 +8,7 @@ drag-target(
   v-bind:on-close="close"
   v-bind:on-close-abort="show"
   v-bind:max-open="menuWidth"
+  v-bind:edge="edge"
   factor="2"
   )
 ul.side-nav(
@@ -123,7 +124,7 @@ module.exports =
       return if @menuOut
       @menuOut = true
       @setCss document.body, "overflow", "hidden"
-      @$refs.dragTarget.open(@edge)
+      @$refs.dragTarget.open()
       @show()
       @removeOverlayOnClick = overlay.addToClickStack =>
         @close()
@@ -139,7 +140,7 @@ module.exports =
       @setCss document.body, "overflow"
       overlay.close()
       @removeOverlayOnClick?()
-      @$refs.dragTarget.close(@edge)
+      @$refs.dragTarget.close()
       if restoreNav == true
         @setFixed()
       else
@@ -153,7 +154,6 @@ module.exports =
   compiled: ->
     @style.width = @menuWidth + "px"
     @$refs.dragTarget.onClick = => @close()
-    @$refs.dragTarget.close(@edge)
     @hide(false)
     if @fixed
       if window.innerWidth > 992

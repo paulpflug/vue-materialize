@@ -1,7 +1,8 @@
 // out: ..
 <template lang="jade">
 li(v-bind:class="{active:active}" )
-  a.collapsible-header(@click="click") {{header}}
+  a.collapsible-header(@click="click")
+    slot(name="header")
   .collapsible-body(v-el:body v-bind:style="style")
     slot No content
 </template>
@@ -65,7 +66,9 @@ module.exports =
 .collapsible-header {
   display: block;
   cursor: pointer;
-  padding: 0 1rem;
+  p,span {
+    padding: 0 1rem;
+  }
   i {
     width: 2rem;
     font-size: 1.6rem;

@@ -25,7 +25,6 @@ module.exports =
         for child in @$children
           child.hide?() unless child == entry
     closeAll: ->
-      console.log "closing all"
       @closeAllBut()()
 
   ready: ->

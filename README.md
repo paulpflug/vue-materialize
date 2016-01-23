@@ -23,26 +23,6 @@ If you want to use the styles:
 ```sh
 npm install --save-dev style-loader css-loader sass-loader url-loader file-loader
 ```
-## Js Modules
-#### sideNav
-```coffee
-## whithin your module
-components:
-  "side-nav": require "vue-materialize/sideNav"
-```
-```jade
-//- in the template
-header
-  side-nav.z-depth-1(v-ref="nav" fixed="true")
-    li.logo
-      a.brand-logo(v-link="/") Your Brand
-    li
-      a(v-link="/") Home
-  nav.top-nav
-    .nav-wrapper
-      a.hide-on-large-only(v-on="click:openNav")
-        i.mdi-navigation-menu
-```
 
 ## SCSS
 #### Webpack config
@@ -62,7 +42,8 @@ create a file, for example `materialize.config.scss`
 @import "~vue-materialize/sass/mixins";
 @import "~vue-materialize/sass/color";
 // include colors you need
-$included_colors: include-color("blue", "base");
+@include do("include-color","black", "base");
+@include do("include-color","white", "base");
 
 // change variables
 $navbar-font-color: #000;
@@ -110,6 +91,124 @@ Require it like this:
 require("./materialize.config.scss")
 ```
 
+## Js Modules
+#### side-nav
+```coffee
+## whithin your module
+components:
+  "side-nav": require "vue-materialize/side-nav"
+methods:
+  toggleNav: ->
+    @$refs.nav.toggle()
+```
+```jade
+//- in the template
+side-nav.z-depth-1(v-ref:nav fixed="true")
+  li.logo
+    a.brand-logo(v-link="/") Your Brand
+  li
+    a(v-link="/") Home
+nav.top-nav
+  .nav-wrapper
+    a.hide-on-large-only(@click="toggleNav")
+      i.mdi-navigation-menu
+```
+
+#### collapsible
+```coffee
+## whithin your module
+components:
+  "collapsible": require "vue-materialize/collapsible"
+  "collapsible-entry": require "vue-materialize/collapsible-entry"
+```
+```jade
+//- in the template
+collapsible
+  collapsible-entry
+    p(slot="header") header
+    p content
+  collapsible-entry
+    p(slot="header") header 2
+    p content 2
+```
+#### input-field
+```coffee
+## whithin your module
+components:
+  "input-field": require "vue-materialize/input-field"
+methods:
+  focusPw: -> @$refs.password.focus()
+  nameChanged: -> @password = ""
+  pwChanged: -> # do something
+  click: -> # do something
+```
+```jade
+//- in the template
+input-field(
+  label="Username"
+  icon="mdi-social-person"
+  autofocus="true"
+  input-id="name"
+  @change="nameChanged"
+  @confirm="focusPw"
+  v-bind:value.sync="name"
+  )
+input-field(
+  label="Password"
+  type="password"
+  input-id="password"
+  @confirm="click"
+  v-bind:value.sync="password"
+  v-ref:password
+  )
+```
+#### modal
+```coffee
+## whithin your module
+components:
+  "modal": require "vue-materialize/modal"
+methods:
+  open: -> @$refs.modal.open()
+  close: -> @$refs.modal.close()
+```
+```jade
+//- in the template
+modal(v-ref:modal)
+  .modal-content Content
+```
+## Js Components
+#### drag-target
+used within side-nav.
+provides a div on the side which reacts to touch panning
+```coffee
+## whithin your module
+components:
+  "drag-target": require "vue-materialize/drag-target"
+```
+```jade
+//- in the template (example from side-nav)
+drag-target(
+  v-ref:drag-target
+  v-bind:on-move="move"
+  v-bind:on-open="open"
+  v-bind:on-open-abort="hide"
+  v-bind:on-close="close"
+  v-bind:on-close-abort="show"
+  v-bind:max-open="menuWidth"
+  v-bind:edge="edge"
+  factor="2" //- will get multiplied on deltaX before its feeded into move
+  )
+```
+
+#### overlay
+used within side-nav and modal.
+
+```coffee
+overlay = require("vue-materialize/overlay")(Vue) #is a singleton
+overlay.open() # manually open the overlay
+overlay.close() # manually close the overlay
+overlay.addToClickStack(cb) # cb will get fired on first click, closes if no other cb left in stack
+```
 ## Release History
 
  - *v0.0.1*: First release

@@ -130,7 +130,7 @@ module.exports = {
       }
       this.menuOut = true;
       this.setCss(document.body, "overflow", "hidden");
-      this.$refs.dragTarget.open(this.edge);
+      this.$refs.dragTarget.open();
       this.show();
       this.removeOverlayOnClick = overlay.addToClickStack((function(_this) {
         return function() {
@@ -156,7 +156,7 @@ module.exports = {
       if (typeof this.removeOverlayOnClick === "function") {
         this.removeOverlayOnClick();
       }
-      this.$refs.dragTarget.close(this.edge);
+      this.$refs.dragTarget.close();
       if (restoreNav === true) {
         return this.setFixed();
       } else {
@@ -178,7 +178,6 @@ module.exports = {
         return _this.close();
       };
     })(this);
-    this.$refs.dragTarget.close(this.edge);
     this.hide(false);
     if (this.fixed) {
       if (window.innerWidth > 992) {
@@ -207,7 +206,7 @@ module.exports = {
 };
 
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<drag-target v-ref:drag-target=\"v-ref:drag-target\" v-bind:on-move=\"move\" v-bind:on-open=\"open\" v-bind:on-open-abort=\"hide\" v-bind:on-close=\"close\" v-bind:on-close-abort=\"show\" v-bind:max-open=\"menuWidth\" factor=\"2\"></drag-target><ul v-el:nav=\"v-el:nav\" @click=\"click\" v-bind:style=\"style\" v-bind:class=\"{rightAligned:rightAligned,fixed:fixed}\" class=\"side-nav\"><slot>No content</slot></ul>"
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<drag-target v-ref:drag-target=\"v-ref:drag-target\" v-bind:on-move=\"move\" v-bind:on-open=\"open\" v-bind:on-open-abort=\"hide\" v-bind:on-close=\"close\" v-bind:on-close-abort=\"show\" v-bind:max-open=\"menuWidth\" v-bind:edge=\"edge\" factor=\"2\"></drag-target><ul v-el:nav=\"v-el:nav\" @click=\"click\" v-bind:style=\"style\" v-bind:class=\"{rightAligned:rightAligned,fixed:fixed}\" class=\"side-nav\"><slot>No content</slot></ul>"
 if (module.hot) {(function () {  module.hot.accept()
   var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)

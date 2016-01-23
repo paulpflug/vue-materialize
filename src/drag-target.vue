@@ -18,6 +18,9 @@ module.exports =
       type:Number
       default: 1
       coerce: Number
+    "edge":
+      type: String
+      default: "left"
     "onMove":
       type: Function
       required: true
@@ -44,24 +47,24 @@ module.exports =
       right: undefined
       left: undefined
       width: undefined
+  compiled: ->
+    @close()
   methods:
     send: (left) ->
-      if left
+      if (@opened and @edge != "left") or (!@opened and @edge == "left")
         @style.right = undefined
         @style.left = 0
       else
         @style.right = 0
         @style.left = undefined
-    open: (edge) ->
-      @edge = edge
+    open: ->
       @opened = true
       @style.width = @width
-      @send(edge!="left")
-    close: (edge) ->
-      @edge = edge
+      @send()
+    close: ->
       @opened = false
       @style.width = undefined
-      @send(edge=="left")
+      @send()
     onPan: (event) ->
       if event.type == "pan"
         dX = event.deltaX*@factor
