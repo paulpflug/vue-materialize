@@ -15,6 +15,7 @@ npm install --save-dev webpack
 // style loaders
 npm install --save-dev style-loader css-loader sass-loader url-loader file-loader
 ```
+or include `build/bundle.js` (comes with npm install - 152kb)
 
 ## SCSS
 #### Webpack config
@@ -93,6 +94,8 @@ require("./materialize.config.scss")
 ```coffee
 components:
   "side-nav": require "vue-materialize/side-nav"
+# or with bundle.js
+  "side-nav": window.vueMaterialize.sideNav
 ```
 [example](https://vue-comps.github.io/vue-side-nav/#!/side-nav)
 [source for example](https://github.com/paulpflug/vue-materialize/blob/master/dev/side-nav.vue")
@@ -104,6 +107,9 @@ components:
 components:
   "collapsible": require "vue-materialize/collapsible"
   "collapsible-item": require "vue-materialize/collapsible-item"
+# or with bundle.js
+  "collapsible": window.vueMaterialize.collapsible
+  "collapsible-item": window.vueMaterialize.collapsibleItem
 ```
 [example](https://vue-comps.github.io/vue-side-nav/#!/collapsible)
 [source for example](https://github.com/paulpflug/vue-materialize/blob/master/dev/collapsible.vue")
@@ -114,6 +120,8 @@ components:
 ## whithin your module
 components:
   "modal": require "vue-materialize/modal"
+# or with bundle.js
+  "modal": window.vueMaterialize.modal
 ```
 [example](https://vue-comps.github.io/vue-side-nav/#!/modal)
 [source for example](https://github.com/paulpflug/vue-materialize/blob/master/dev/modal.vue")
@@ -124,6 +132,8 @@ components:
 ## whithin your module
 components:
   "dropdown": require "vue-materialize/dropdown"
+# or with bundle.js
+  "dropdown": window.vueMaterialize.dropdown
 ```
 [example](https://vue-comps.github.io/vue-side-nav/#!/dropdown)
 [source for example](https://github.com/paulpflug/vue-materialize/blob/master/dev/dropdown.vue")
@@ -134,6 +144,8 @@ components:
 ## whithin your module
 components:
   "input-field": require "vue-materialize/input-field"
+# or with bundle.js
+  "input-field": window.vueMaterialize.inputField
 ```
 more info to come..
 

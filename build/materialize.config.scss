@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+@import "~materialize-css/sass/components/mixins";
+
+@import "~materialize-css/sass/components/color";
+
+@import "~materialize-css/sass/components/variables";
+@import "~materialize-css/sass/components/normalize";
+
+@import "~materialize-css/sass/components/global";
+// basic css
+@import "~materialize-css/sass/components/icons-material-design";
+@import "~materialize-css/sass/components/typography";
+@import "~materialize-css/sass/components/buttons";
+@import "~materialize-css/sass/components/grid";
+@import "~materialize-css/sass/components/navbar";
+@import "~materialize-css/sass/components/table_of_contents";
+@import "~materialize-css/sass/components/preloader";
+
+// js css
+@import "~materialize-css/sass/components/sideNav";
+@import "~materialize-css/sass/components/forms/forms";
+@import "~materialize-css/sass/components/dropdown";
+@import "~materialize-css/sass/components/modal";
+@import "~materialize-css/sass/components/collapsible";
+// @import "~materialize-css/sass/components/waves";
+// @import "~materialize-css/sass/components/cards";
+// @import "~materialize-css/sass/components/toast";
+// @import "~materialize-css/sass/components/tabs";
+// @import "~materialize-css/sass/components/tooltip";
+// @import "~materialize-css/sass/components/materialbox";
+// @import "~materialize-css/sass/components/slider";
+// @import "~materialize-css/sass/components/date_picker/default";
+// @import "~materialize-css/sass/components/date_picker/default.date";
+// @import "~materialize-css/sass/components/date_picker/default.time";
