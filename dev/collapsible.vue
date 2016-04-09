@@ -1,0 +1,42 @@
+<template lang="jade">
+.container
+  p collapsible
+  collapsible
+    collapsible-item
+      p(slot="header") header1
+      p body 1
+    collapsible-item
+      p(slot="header") header2
+      p body 2
+    collapsible-item
+      p(slot="header") header3
+      p body 3
+  p accordion
+  collapsible(accordion)
+    collapsible-item
+      p(slot="header") header1
+      p body 1
+    collapsible-item(is-active)
+      p(slot="header") header2
+      p body 2
+    collapsible-item
+      p(slot="header") header3
+      p body 3
+  a(href="https://github.com/paulpflug/vue-materialize/blob/master/dev/collapsible.vue") source
+</template>
+
+<script lang="coffee">
+require("./materialize.config.scss")
+module.exports =
+  components:
+    "collapsible" : require "../src/collapsible.coffee"
+    "collapsible-item" : require "../src/collapsible-item.coffee"
+
+</script>
+
+<style lang="stylus">
+.container > a
+  position absolute
+  left 40%
+  top 14px
+</style>

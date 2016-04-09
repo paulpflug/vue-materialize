@@ -1,13 +1,21 @@
 (function() {
-  var overlay;
+  var Overlay, Velocity;
 
-  overlay = null;
+  Velocity = require("velocity-animate");
 
-  module.exports = function(Vue) {
-    if (overlay == null) {
-      overlay = new Vue(require('./overlay-component'));
-    }
-    return overlay;
+  Overlay = require("vue-overlay");
+
+  Overlay.obj.props.fade["default"] = function(arg) {
+    var cb, el, opacity;
+    el = arg.el, opacity = arg.opacity, cb = arg.cb;
+    return Velocity(el, {
+      opacity: opacity
+    }, {
+      duration: 300,
+      queue: false,
+      easing: 'easeOutQuad',
+      complete: cb
+    });
   };
 
 }).call(this);

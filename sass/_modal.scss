@@ -1,6 +1,0 @@
-.modal {
-  @extend .z-depth-4;
-  @media #{$medium-and-down} {
-   width: 80%;
-  }
-}
