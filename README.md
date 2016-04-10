@@ -4,7 +4,7 @@
 
 **No jQuery dependency**
 
-### [See it in action](https://paulpflug.github.io/vue-materialize)
+### [Demo](https://paulpflug.github.io/vue-materialize)
 
 # Install
 
@@ -97,7 +97,12 @@ components:
 # or with bundle.js
   "side-nav": window.vueMaterialize.sideNav
 ```
-[example](https://paulpflug.github.io/vue-materialize/#!/side-nav) - [source for example](https://github.com/paulpflug/vue-materialize/blob/master/dev/side-nav.vue) - [doc: vue-comps-side-nav](https://github.com/vue-comps/vue-side-nav)
+```html
+<side-nav>
+  <li><a>First Text</a><li>
+</side-nav>
+```
+[demo](https://paulpflug.github.io/vue-materialize/#!/side-nav) - [source for demo](https://github.com/paulpflug/vue-materialize/blob/master/dev/side-nav.vue) - [doc: vue-comps-side-nav](https://github.com/vue-comps/vue-side-nav)
 
 #### collapsible
 ```coffee
@@ -109,7 +114,19 @@ components:
   "collapsible": window.vueMaterialize.collapsible
   "collapsible-item": window.vueMaterialize.collapsibleItem
 ```
-[example](https://paulpflug.github.io/vue-materialize/#!/collapsible) - [source for example](https://github.com/paulpflug/vue-materialize/blob/master/dev/collapsible.vue) - [doc: vue-comps-collapsible](https://github.com/vue-comps/vue-collapsible)
+```html
+<collapsible>
+  <collapsible-item>
+    <h4 slot="header">header1</h4>
+    <p>body 1</p>
+  </collapsible-item>
+  <collapsible-item>
+    <h4 slot="header">header21</h4>
+    <p>body 2</p>
+  </collapsible-item>
+</collapsible>
+```
+[demo](https://paulpflug.github.io/vue-materialize/#!/collapsible) - [source for demo](https://github.com/paulpflug/vue-materialize/blob/master/dev/collapsible.vue) - [doc: vue-comps-collapsible](https://github.com/vue-comps/vue-collapsible)
 
 #### modal
 ```coffee
@@ -119,7 +136,20 @@ components:
 # or with bundle.js
   "modal": window.vueMaterialize.modal
 ```
-[example](https://paulpflug.github.io/vue-materialize/#!/modal) - [source for example](https://github.com/paulpflug/vue-materialize/blob/master/dev/modal.vue) - [doc: vue-comps-modal](https://github.com/vue-comps/vue-comps-modal)
+```html
+<button> Open Modal
+  <modal>
+    <modal-content>
+      <h4>Header</h4>
+      <p>Content</p>
+    </modal-content>
+    <modal-footer>
+      <button class="btn btn-flat">close</button>
+    </modal-footer>
+  </modal>
+</button>
+```
+[demo](https://paulpflug.github.io/vue-materialize/#!/modal) - [source for demo](https://github.com/paulpflug/vue-materialize/blob/master/dev/modal.vue) - [doc: vue-comps-modal](https://github.com/vue-comps/vue-comps-modal)
 
 #### dropdown
 ```coffee
@@ -129,7 +159,14 @@ components:
 # or with bundle.js
   "dropdown": window.vueMaterialize.dropdown
 ```
-[example](https://paulpflug.github.io/vue-materialize/#!/dropdown) - [source for example](https://github.com/paulpflug/vue-materialize/blob/master/dev/dropdown.vue) - [doc: vue-comps-dropdown](https://github.com/vue-comps/vue-comps-dropdown)
+```html
+<button> Open Dropdown
+  <dropdown>
+    <li>Content</li>
+  </dropdown>
+</button>
+```
+[demo](https://paulpflug.github.io/vue-materialize/#!/dropdown) - [source for demo](https://github.com/paulpflug/vue-materialize/blob/master/dev/dropdown.vue) - [doc: vue-comps-dropdown](https://github.com/vue-comps/vue-comps-dropdown)
 
 #### input-field
 ```coffee
