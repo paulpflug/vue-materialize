@@ -23,7 +23,7 @@
     "vue-comps-modal": "^0.1.0",
     "vue-mixins": "^0.2.3",
     "vue-overlay": "^0.1.0",
-    "vue-side-nav": "^0.1.0",
+    "vue-side-nav": "^0.1.2",
     "vueify-insert-css": "^1.0.0"
   },
   "devDependencies": {

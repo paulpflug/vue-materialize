@@ -1,16 +1,16 @@
 <template lang="jade">
 
 .container
-  side-nav(:is-opened.sync="opened" v-ref:side-nav fixed)
+  side-nav(:is-opened.sync="opened",:is-fixed.sync="fixed" v-ref:side-nav fixed)
     li
       a First Link
     li
       a Second Link
   .container2
     h4 fixed side-nav
-    button.btn(@click="toggle" style="top: 10px") Toggle
-    p Resize your window
-    p drag the menu in!
+    button.btn(@click="toggle" style="top: 10px" v-if="!fixed") Toggle
+    p(v-if="fixed") Make your window smaller
+    p(v-if="!fixed && !opened") drag the menu in!
     a(href="https://github.com/paulpflug/vue-materialize/blob/master/dev/side-nav.vue") source
 
 </template>
@@ -25,6 +25,7 @@ module.exports =
     Vue.use(require('vue-touch'))
   data: ->
     opened: false
+    fixed:false
   methods:
     toggle: ->
       @opened = !@opened

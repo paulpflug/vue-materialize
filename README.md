@@ -102,7 +102,7 @@ components:
   <li><a>First Text</a><li>
 </side-nav>
 ```
-[demo](https://paulpflug.github.io/vue-materialize/#!/side-nav) - [source for demo](https://github.com/paulpflug/vue-materialize/blob/master/dev/side-nav.vue) - [doc: vue-comps-side-nav](https://github.com/vue-comps/vue-side-nav)
+[demo](https://paulpflug.github.io/vue-materialize/#!/side-nav) - [source for demo](https://github.com/paulpflug/vue-materialize/blob/master/dev/side-nav.vue) - [doc: vue-side-nav](https://github.com/vue-comps/vue-side-nav)
 
 #### collapsible
 ```coffee
@@ -126,7 +126,7 @@ components:
   </collapsible-item>
 </collapsible>
 ```
-[demo](https://paulpflug.github.io/vue-materialize/#!/collapsible) - [source for demo](https://github.com/paulpflug/vue-materialize/blob/master/dev/collapsible.vue) - [doc: vue-comps-collapsible](https://github.com/vue-comps/vue-collapsible)
+[demo](https://paulpflug.github.io/vue-materialize/#!/collapsible) - [source for demo](https://github.com/paulpflug/vue-materialize/blob/master/dev/collapsible.vue) - [doc: vue-collapsible](https://github.com/vue-comps/vue-collapsible)
 
 #### modal
 ```coffee
