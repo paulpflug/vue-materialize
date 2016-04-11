@@ -168,6 +168,30 @@ components:
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/pushpin) - [source for demo](dev/pushpin.vue) - [doc: vue-pushpin](https://github.com/vue-comps/vue-pushpin)
 
+#### scrollspy
+```coffee
+## whithin your module
+components:
+  "scrollspy": require "vue-materialize/scrollspy"
+  "scrollspy-item": require "vue-materialize/scrollspy-item"
+# or with bundle.js
+  "scrollspy": window.vueMaterialize.scrollspy
+  "scrollspy-item": window.vueMaterialize.scrollspyItem
+```
+```html
+<scrollspy>
+  <scrollspy-item>
+    <h4 slot="header">header1</h4>
+    <p>body 1</p>
+  </scrollspy-item>
+  <scrollspy-item>
+    <h4 slot="header">header21</h4>
+    <p>body 2</p>
+  </scrollspy-item>
+</scrollspy>
+```
+[demo](https://paulpflug.github.io/vue-materialize/#!/scrollspy) - [source for demo](dev/scrollspy.vue) - [doc: vue-comps-scrollspy](https://github.com/vue-comps/vue-comps-scrollspy)
+
 #### side-nav
 ```coffee
 components:
