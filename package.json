@@ -21,9 +21,10 @@
     "vue-collapsible": "^0.1.0",
     "vue-comps-dropdown": "^0.1.0",
     "vue-comps-modal": "^0.1.0",
-    "vue-mixins": "^0.2.3",
+    "vue-mixins": "^0.2.4",
     "vue-overlay": "^0.1.0",
     "vue-side-nav": "^0.1.2",
+    "vue-pushpin": "^0.1.1",
     "vueify-insert-css": "^1.0.0"
   },
   "devDependencies": {
@@ -67,7 +68,7 @@
     "vue-style-loader": "^1.0.0",
     "vue-touch": "^1.0.2",
     "vueify-insert-css": "^1.0.0",
-    "webpack": "^1.12.14"
+    "webpack": "^1.12.15"
   },
   "keywords": [],
   "readmeFilename": "README.md",

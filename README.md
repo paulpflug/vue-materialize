@@ -90,20 +90,6 @@ Require it like this:
 require("./materialize.config.scss")
 ```
 
-#### side-nav
-```coffee
-components:
-  "side-nav": require "vue-materialize/side-nav"
-# or with bundle.js
-  "side-nav": window.vueMaterialize.sideNav
-```
-```html
-<side-nav>
-  <li><a>First Text</a><li>
-</side-nav>
-```
-[demo](https://paulpflug.github.io/vue-materialize/#!/side-nav) - [source for demo](https://github.com/paulpflug/vue-materialize/blob/master/dev/side-nav.vue) - [doc: vue-side-nav](https://github.com/vue-comps/vue-side-nav)
-
 #### collapsible
 ```coffee
 ## whithin your module
@@ -126,7 +112,24 @@ components:
   </collapsible-item>
 </collapsible>
 ```
-[demo](https://paulpflug.github.io/vue-materialize/#!/collapsible) - [source for demo](https://github.com/paulpflug/vue-materialize/blob/master/dev/collapsible.vue) - [doc: vue-collapsible](https://github.com/vue-comps/vue-collapsible)
+[demo](https://paulpflug.github.io/vue-materialize/#!/collapsible) - [source for demo](dev/collapsible.vue) - [doc: vue-collapsible](https://github.com/vue-comps/vue-collapsible)
+
+#### dropdown
+```coffee
+## whithin your module
+components:
+  "dropdown": require "vue-materialize/dropdown"
+# or with bundle.js
+  "dropdown": window.vueMaterialize.dropdown
+```
+```html
+<button> Open Dropdown
+  <dropdown>
+    <li>Content</li>
+  </dropdown>
+</button>
+```
+[demo](https://paulpflug.github.io/vue-materialize/#!/dropdown) - [source for demo](dev/dropdown.vue) - [doc: vue-comps-dropdown](https://github.com/vue-comps/vue-comps-dropdown)
 
 #### modal
 ```coffee
@@ -149,24 +152,41 @@ components:
   </modal>
 </button>
 ```
-[demo](https://paulpflug.github.io/vue-materialize/#!/modal) - [source for demo](https://github.com/paulpflug/vue-materialize/blob/master/dev/modal.vue) - [doc: vue-comps-modal](https://github.com/vue-comps/vue-comps-modal)
+[demo](https://paulpflug.github.io/vue-materialize/#!/modal) - [source for demo](dev/modal.vue) - [doc: vue-comps-modal](https://github.com/vue-comps/vue-comps-modal)
 
-#### dropdown
+#### pushpin
 ```coffee
-## whithin your module
 components:
-  "dropdown": require "vue-materialize/dropdown"
+  "pushpin": require "vue-materialize/pushpin"
 # or with bundle.js
-  "dropdown": window.vueMaterialize.dropdown
+  "pushpin": window.vueMaterialize.pushpin
 ```
 ```html
-<button> Open Dropdown
-  <dropdown>
-    <li>Content</li>
-  </dropdown>
-</button>
+<pushpin>
+  <p>some fixed text</p>
+</pushpin>
 ```
-[demo](https://paulpflug.github.io/vue-materialize/#!/dropdown) - [source for demo](https://github.com/paulpflug/vue-materialize/blob/master/dev/dropdown.vue) - [doc: vue-comps-dropdown](https://github.com/vue-comps/vue-comps-dropdown)
+[demo](https://paulpflug.github.io/vue-materialize/#!/pushpin) - [source for demo](dev/pushpin.vue) - [doc: vue-pushpin](https://github.com/vue-comps/vue-pushpin)
+
+#### side-nav
+```coffee
+components:
+  "side-nav": require "vue-materialize/side-nav"
+# or with bundle.js
+  "side-nav": window.vueMaterialize.sideNav
+```
+```html
+<side-nav>
+  <li><a>First Text</a><li>
+</side-nav>
+```
+[demo](https://paulpflug.github.io/vue-materialize/#!/side-nav) - [source for demo](dev/side-nav.vue) - [doc: vue-side-nav](https://github.com/vue-comps/vue-side-nav)
+
+
+
+
+
+
 
 #### input-field
 ```coffee
