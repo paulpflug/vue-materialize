@@ -14,7 +14,7 @@
 require("../materialize.config.scss")
 module.exports =
   components:
-    "switch" : require "../../src/switch.coffee"
+    "switch" : require "../../src/switch.vue"
   methods:
     onOn: ->
       console.log "isOn"
