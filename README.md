@@ -154,6 +154,19 @@ components:
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/modal) - [source for demo](dev/modal.vue) - [doc: vue-comps-modal](https://github.com/vue-comps/vue-comps-modal)
 
+#### parallax
+```coffee
+components:
+  "parallax": require "vue-materialize/parallax"
+# or with bundle.js
+  "parallax": window.vueMaterialize.parallax
+```
+```html
+<parallax src="path/to/img">
+</parallax>
+```
+[demo](https://paulpflug.github.io/vue-materialize/#!/parallax) - [source for demo](dev/parallax.vue) - [doc: vue-parallax](https://github.com/vue-comps/vue-parallax)
+
 #### pushpin
 ```coffee
 components:
