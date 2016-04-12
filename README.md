@@ -46,21 +46,17 @@ create a file, for example `materialize.config.scss`
 @import "~vue-materialize/sass/colorProcessor";
 // END: only specific colors
 
+// all available sass variables:
+// https://github.com/Dogfalo/materialize/blob/master/sass/components/_variables.scss
 @import "~materialize-css/sass/components/variables";
 @import "~materialize-css/sass/components/normalize";
 @import "~materialize-css/sass/components/global";
 
-// basic css
-
-// icons are no long included in materializeCSS
-@import "~materialize-css/sass/components/icons-material-design";
-
-// roboto doesn't seem to work
-// $roboto-font-path: "../../fonts/roboto/";
-// @import "~materialize-css/sass/components/roboto";
-
 // css only, no JS needed for these
 // activate only what you need
+$roboto-font-path: "~materialize-css/fonts/roboto/";
+@import "~materialize-css/sass/components/roboto";
+@import "~materialize-css/sass/components/icons-material-design"; // icons are no long included in materializeCSS
 @import "~materialize-css/sass/components/typography";
 @import "~materialize-css/sass/components/buttons";
 @import "~materialize-css/sass/components/grid";
