@@ -163,6 +163,8 @@ components:
 ```
 ```html
 <parallax src="path/to/img">
+  <div slot="loading">loading...</div>
+  <div>content</div>
 </parallax>
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/parallax) - [source for demo](dev/parallax.vue) - [doc: vue-parallax](https://github.com/vue-comps/vue-parallax)
