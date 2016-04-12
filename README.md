@@ -38,12 +38,13 @@ create a file, for example `materialize.config.scss`
 // all colors:
 // @import "~materialize-css/sass/components/color";
 
-// only specific colors:
+// BEGIN: only specific colors
 @import "~vue-materialize/sass/color";
 // include colors you need
 @include do("include-color","black", "base");
 @include do("include-color","white", "base");
 @import "~vue-materialize/sass/colorProcessor";
+// END: only specific colors
 
 @import "~materialize-css/sass/components/variables";
 @import "~materialize-css/sass/components/normalize";
@@ -55,16 +56,17 @@ create a file, for example `materialize.config.scss`
 @import "~materialize-css/sass/components/icons-material-design";
 
 // roboto doesn't seem to work
-//$roboto-font-path: "../../fonts/roboto/";
-//@import "~materialize-css/sass/components/roboto";
+// $roboto-font-path: "../../fonts/roboto/";
+// @import "~materialize-css/sass/components/roboto";
 
+// css only, no JS needed for these
+// activate only what you need
 @import "~materialize-css/sass/components/typography";
 @import "~materialize-css/sass/components/buttons";
 @import "~materialize-css/sass/components/grid";
 @import "~materialize-css/sass/components/navbar";
-@import "~materialize-css/sass/components/table_of_contents";
 @import "~materialize-css/sass/components/preloader";
-
+@import "~vue-materialize/sass/forms";
 
 // css for js modules
 // activate only what you need
@@ -72,7 +74,10 @@ create a file, for example `materialize.config.scss`
 @import "~materialize-css/sass/components/dropdown";
 @import "~materialize-css/sass/components/modal";
 @import "~materialize-css/sass/components/collapsible";
-@import "~materialize-css/sass/components/forms/forms";
+@import "~materialize-css/sass/components/table_of_contents"; // scrollspy
+@import "~materialize-css/sass/components/forms/input-fields";
+
+// NOT implemented yet:
 // @import "~materialize-css/sass/components/waves";
 // @import "~materialize-css/sass/components/cards";
 // @import "~materialize-css/sass/components/toast";
@@ -83,6 +88,12 @@ create a file, for example `materialize.config.scss`
 // @import "~materialize-css/sass/components/date_picker/default";
 // @import "~materialize-css/sass/components/date_picker/default.date";
 // @import "~materialize-css/sass/components/date_picker/default.time";
+// @import "~materialize-css/sass/components/forms/radio-buttons";
+// @import "~materialize-css/sass/components/forms/checkboxes";
+// @import "~materialize-css/sass/components/forms/switches";
+// @import "~materialize-css/sass/components/forms/select";
+// @import "~materialize-css/sass/components/forms/file-input";
+// @import "~materialize-css/sass/components/forms/range";
 ```
 
 Require it like this:

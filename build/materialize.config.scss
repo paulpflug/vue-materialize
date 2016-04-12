@@ -2,27 +2,45 @@
 
 @import "~materialize-css/sass/components/mixins";
 
-@import "~materialize-css/sass/components/color";
+// all colors:
+// @import "~materialize-css/sass/components/color";
 
+// BEGIN: only specific colors
+@import "../sass/color";
+// include colors you need
+@include do("include-color","black", "base");
+@include do("include-color","white", "base");
+@import "../sass/colorProcessor";
+// END: only specific colors
+
+// all available sass variables:
+// https://github.com/Dogfalo/materialize/blob/master/sass/components/_variables.scss
 @import "~materialize-css/sass/components/variables";
 @import "~materialize-css/sass/components/normalize";
-
 @import "~materialize-css/sass/components/global";
-// basic css
-@import "~materialize-css/sass/components/icons-material-design";
+
+// css only, no JS needed for these
+// activate only what you need
+$roboto-font-path: "~materialize-css/fonts/roboto/";
+@import "~materialize-css/sass/components/roboto";
+@import "~materialize-css/sass/components/icons-material-design"; // icons are no long included in materializeCSS
 @import "~materialize-css/sass/components/typography";
 @import "~materialize-css/sass/components/buttons";
 @import "~materialize-css/sass/components/grid";
 @import "~materialize-css/sass/components/navbar";
-@import "~materialize-css/sass/components/table_of_contents";
 @import "~materialize-css/sass/components/preloader";
+@import "../sass/forms";
 
-// js css
+// css for js modules
+// activate only what you need
 @import "~materialize-css/sass/components/sideNav";
-@import "~materialize-css/sass/components/forms/forms";
 @import "~materialize-css/sass/components/dropdown";
 @import "~materialize-css/sass/components/modal";
 @import "~materialize-css/sass/components/collapsible";
+@import "~materialize-css/sass/components/table_of_contents"; // scrollspy
+@import "~materialize-css/sass/components/forms/input-fields";
+
+// NOT implemented yet:
 // @import "~materialize-css/sass/components/waves";
 // @import "~materialize-css/sass/components/cards";
 // @import "~materialize-css/sass/components/toast";
@@ -33,3 +51,9 @@
 // @import "~materialize-css/sass/components/date_picker/default";
 // @import "~materialize-css/sass/components/date_picker/default.date";
 // @import "~materialize-css/sass/components/date_picker/default.time";
+// @import "~materialize-css/sass/components/forms/radio-buttons";
+// @import "~materialize-css/sass/components/forms/checkboxes";
+// @import "~materialize-css/sass/components/forms/switches";
+// @import "~materialize-css/sass/components/forms/select";
+// @import "~materialize-css/sass/components/forms/file-input";
+// @import "~materialize-css/sass/components/forms/range";
