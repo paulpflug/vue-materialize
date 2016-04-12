@@ -30,6 +30,9 @@ $roboto-font-path: "~materialize-css/fonts/roboto/";
 @import "~materialize-css/sass/components/navbar";
 @import "~materialize-css/sass/components/preloader";
 @import "../sass/forms";
+@import "~materialize-css/sass/components/forms/checkboxes";
+@import "~materialize-css/sass/components/forms/radio-buttons";
+
 
 // css for js modules
 // activate only what you need
@@ -39,6 +42,7 @@ $roboto-font-path: "~materialize-css/fonts/roboto/";
 @import "~materialize-css/sass/components/collapsible";
 @import "~materialize-css/sass/components/table_of_contents"; // scrollspy
 @import "~materialize-css/sass/components/forms/input-fields";
+@import "~materialize-css/sass/components/forms/switches";
 
 // NOT implemented yet:
 // @import "~materialize-css/sass/components/waves";
@@ -51,9 +55,6 @@ $roboto-font-path: "~materialize-css/fonts/roboto/";
 // @import "~materialize-css/sass/components/date_picker/default";
 // @import "~materialize-css/sass/components/date_picker/default.date";
 // @import "~materialize-css/sass/components/date_picker/default.time";
-// @import "~materialize-css/sass/components/forms/radio-buttons";
-// @import "~materialize-css/sass/components/forms/checkboxes";
-// @import "~materialize-css/sass/components/forms/switches";
 // @import "~materialize-css/sass/components/forms/select";
 // @import "~materialize-css/sass/components/forms/file-input";
 // @import "~materialize-css/sass/components/forms/range";

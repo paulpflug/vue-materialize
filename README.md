@@ -63,6 +63,8 @@ $roboto-font-path: "~materialize-css/fonts/roboto/";
 @import "~materialize-css/sass/components/navbar";
 @import "~materialize-css/sass/components/preloader";
 @import "~vue-materialize/sass/forms";
+@import "~materialize-css/sass/components/forms/checkboxes";
+@import "~materialize-css/sass/components/forms/radio-buttons";
 
 // css for js modules
 // activate only what you need
@@ -72,6 +74,7 @@ $roboto-font-path: "~materialize-css/fonts/roboto/";
 @import "~materialize-css/sass/components/collapsible";
 @import "~materialize-css/sass/components/table_of_contents"; // scrollspy
 @import "~materialize-css/sass/components/forms/input-fields";
+@import "~materialize-css/sass/components/forms/switches";
 
 // NOT implemented yet:
 // @import "~materialize-css/sass/components/waves";
@@ -84,9 +87,6 @@ $roboto-font-path: "~materialize-css/fonts/roboto/";
 // @import "~materialize-css/sass/components/date_picker/default";
 // @import "~materialize-css/sass/components/date_picker/default.date";
 // @import "~materialize-css/sass/components/date_picker/default.time";
-// @import "~materialize-css/sass/components/forms/radio-buttons";
-// @import "~materialize-css/sass/components/forms/checkboxes";
-// @import "~materialize-css/sass/components/forms/switches";
 // @import "~materialize-css/sass/components/forms/select";
 // @import "~materialize-css/sass/components/forms/file-input";
 // @import "~materialize-css/sass/components/forms/range";
@@ -231,10 +231,56 @@ components:
 
 
 
+#### forms
+##### radio
+```html
+<input type="radio" id="one" value="One" v-model="picked">
+<label for="one">One</label>
+<br>
+<input type="radio" id="two" value="Two" v-model="picked" class="with-gap">
+<label for="two">Two</label>
+<br>
+```
+[demo](https://paulpflug.github.io/vue-materialize/#!/forms/radio) - [source for demo](dev/forms/radio.vue) - [doc: radio](http://vuejs.org/guide/forms.html#Radio)
+##### checkbox
+```html
+<input type="checkbox" id="one">
+<label for="one">One</label>
+<br>
+<input type="checkbox" id="two" class="filled-in">
+<label for="two">Two</label>
+<br>
+```
+[demo](https://paulpflug.github.io/vue-materialize/#!/forms/checkbox) - [source for demo](dev/forms/checkbox.vue) - [doc: checkbox](http://vuejs.org/guide/forms.html#Checkbox)
+##### switch
+```coffee
+components:
+  "switch": require "vue-materialize/switch"
+# or with bundle.js
+  "switch": window.vueMaterialize.switch
+```
+```html
+<switch>
+  <span slot="off">SomeOffLabel</span> <!-- defaults to Off -->
+  <span slot="on">SomeOnLabel</span> <!-- defaults to On -->
+</switch>
+```
+[demo](https://paulpflug.github.io/vue-materialize/#!/forms/switch) - [source for demo](dev/forms/switch.vue)
+###### Props
+| Name | type | default | description |
+| ---:| --- | ---| --- |
+| is-on | Boolean | false | (two-way) toggle state |
+| disabled | Boolean | false | is disabled |
+
+###### Events
+| Name |  description |
+| ---:| --- | ---| --- |
+| off |  will be emitted on click when state was on |
+| on |  will be emitted on click when state was off |
+| toggle |  will be emitted on click |
 
 
-
-#### input-field
+##### input-field
 ```coffee
 ## whithin your module
 components:
