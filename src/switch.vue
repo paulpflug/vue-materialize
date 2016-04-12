@@ -5,7 +5,7 @@
     slot(name="off") Off
     input(type="checkbox",v-model="on",:disabled="disabled")
     span.lever
-    slot(name="on")
+    slot(name="on") On
 </template>
 
 <script lang="coffee">
