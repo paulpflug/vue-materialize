@@ -2,9 +2,32 @@
 
 [materializeCss](http://materializecss.com/) styles for [vue-comps](https://github.com/vue-comps).
 
-**No jQuery dependency**
-
 ### [Demo](https://paulpflug.github.io/vue-materialize)
+
+# Features
+
+- No `jQuery` dependency
+- `Velocity.js` for animations
+- `vue-touch` for touch compability
+- Easy style modification
+- Only load what you need ([webpack code splitting](https://webpack.github.io/docs/code-splitting.html))
+
+#### What is missing:
+
+- fixed-action-buttons
+- reveal-card
+- carousel
+- character-counter (input/textarea)
+- textarea resize
+- select
+- range & slider
+- file-input
+- scrollfire
+- tabs
+- toasts
+- tooltip
+- waves
+- date-picker
 
 # Install
 
