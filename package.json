@@ -76,6 +76,7 @@
   "keywords": [],
   "readmeFilename": "README.md",
   "scripts": {
+    "build:coffee": "coffee --no-header --compile --output . src/*.coffee",
     "build:vue": "NODE_ENV=production vue-compiler --out . src/*.vue",
     "build:webpack": "webpack --config build/webpack.config.coffee",
     "build": "run-npm build:*",

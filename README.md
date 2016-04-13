@@ -38,7 +38,7 @@ npm install --save-dev webpack
 // style loaders
 npm install --save-dev style-loader css-loader sass-loader url-loader file-loader
 ```
-or include `build/bundle.js` (comes with npm install - 152kb)
+or include `build/bundle.js` (comes with npm install - 138kb - includes `Velocity.js`)
 
 ## SCSS
 #### Webpack config
