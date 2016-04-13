@@ -24,7 +24,7 @@
 - file-input
 - scrollfire
 - tabs
-- toasts
+- touch dismiss for toasts
 - tooltip
 - waves
 - date-picker
@@ -98,11 +98,11 @@ $roboto-font-path: "~materialize-css/fonts/roboto/";
 @import "~materialize-css/sass/components/table_of_contents"; // scrollspy
 @import "~materialize-css/sass/components/forms/input-fields";
 @import "~materialize-css/sass/components/forms/switches";
+@import "~materialize-css/sass/components/toast";
 
 // NOT implemented yet:
 // @import "~materialize-css/sass/components/waves";
 // @import "~materialize-css/sass/components/cards";
-// @import "~materialize-css/sass/components/toast";
 // @import "~materialize-css/sass/components/tabs";
 // @import "~materialize-css/sass/components/tooltip";
 // @import "~materialize-css/sass/components/materialbox";
@@ -251,8 +251,21 @@ components:
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/side-nav) - [source for demo](dev/side-nav.vue) - [doc: vue-side-nav](https://github.com/vue-comps/vue-side-nav)
 
-
-
+#### toaster
+#### side-nav
+```coffee
+mixins:[
+  require "vue-materialize/toaster"
+  # or with bundle.js
+  window.vueMaterialize.toaster
+]
+```
+```coffee
+# in the instance (text is mandatory)
+@toaster.toast text:"I'm toast", classes:["toast","rounded"], timeout:4000, cb: ->
+  #do something on close
+```
+[demo](https://paulpflug.github.io/vue-materialize/#!/toaster) - [source for demo](dev/toaster.vue) - [doc: vue-toaster](https://github.com/vue-comps/vue-toaster)
 
 #### forms
 ##### radio

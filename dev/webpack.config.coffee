@@ -12,4 +12,4 @@ module.exports =
       { test: /\.scss$/, loader: "style!css!sass?sourceMap"}
     ]
   resolve:
-    extensions: ["",".webpack.js",".web.js",".js",".coffee"]
+    extensions: ["",".webpack.js",".web.js",".js",".coffee",".vue"]
