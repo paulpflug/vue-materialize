@@ -1,7 +1,7 @@
 <template lang="jade">
 
 .container
-  button.btn(@click="toast") Toast
+  button.btn(@click="normaltoast") Toast
   button.btn(@click="roundedtoast") Rounded toast
   a(href="https://github.com/paulpflug/vue-materialize/blob/master/dev/toaster.vue") source
 
@@ -13,10 +13,10 @@ module.exports =
     require("../src/toaster.coffee")
   ]
   methods:
-    toast: ->
-      @toaster.toast text:"I am toast"
+    normaltoast: ->
+      @toast text:"I am toast"
     roundedtoast: ->
-      @toaster.toast text:"I am round toast", classes: ["toast","rounded"]
+      @toast text:"I am round toast", classes: ["toast","rounded"]
 </script>
 
 <style lang="stylus">
