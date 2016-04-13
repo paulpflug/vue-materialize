@@ -252,7 +252,6 @@ components:
 [demo](https://paulpflug.github.io/vue-materialize/#!/side-nav) - [source for demo](dev/side-nav.vue) - [doc: vue-side-nav](https://github.com/vue-comps/vue-side-nav)
 
 #### toaster
-#### side-nav
 ```coffee
 mixins:[
   require "vue-materialize/toaster"
@@ -262,7 +261,7 @@ mixins:[
 ```
 ```coffee
 # in the instance (text is mandatory)
-@toaster.toast text:"I'm toast", classes:["toast","rounded"], timeout:4000, cb: ->
+@toast text:"I'm toast", classes:["toast","rounded"], timeout:4000, cb: ->
   #do something on close
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/toaster) - [source for demo](dev/toaster.vue) - [doc: vue-toaster](https://github.com/vue-comps/vue-toaster)

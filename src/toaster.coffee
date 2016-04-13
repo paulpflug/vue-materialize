@@ -4,5 +4,5 @@ Toaster.obj.props.isTop.default = true
 Toaster.obj.components.toast = require "./toast"
 mixin = require("vue-mixins/getVue")
 mixin.compiled = ->
-  @toaster = Toaster(@getVue())
+  @toast = Toaster(@getVue()).toast
 module.exports = mixin
