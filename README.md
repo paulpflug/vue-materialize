@@ -24,7 +24,6 @@
 - file-input
 - scrollfire
 - tabs
-- touch dismiss for toasts
 - tooltip
 - waves
 - date-picker
@@ -239,6 +238,10 @@ components:
 
 #### side-nav
 ```coffee
+# somewhere
+Vue.use(require('vue-touch'))
+
+# in your component
 components:
   "side-nav": require "vue-materialize/side-nav"
 # or with bundle.js
@@ -253,6 +256,10 @@ components:
 
 #### toaster
 ```coffee
+# somewhere
+Vue.use(require('vue-touch'))
+
+# in your component
 mixins:[
   require "vue-materialize/toaster"
   # or with bundle.js

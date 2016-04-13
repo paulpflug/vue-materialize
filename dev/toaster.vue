@@ -1,17 +1,27 @@
 <template lang="jade">
 
 .container
+  p
+    a(href="https://github.com/paulpflug/vue-materialize/blob/master/dev/toaster.vue") source
   button.btn(@click="normaltoast") Toast
+  br
+  br
   button.btn(@click="roundedtoast") Rounded toast
-  a(href="https://github.com/paulpflug/vue-materialize/blob/master/dev/toaster.vue") source
+
+  p drag toasts to dismiss
+  p hover toast to keep it open
 
 </template>
 
 <script lang="coffee">
 module.exports =
   mixins:[
+    require("vue-mixins/getVue")
     require("../src/toaster.coffee")
   ]
+  beforeCompile: ->
+    Vue = @getVue()
+    Vue.use(require('vue-touch'))
   methods:
     normaltoast: ->
       @toast text:"I am toast"
@@ -20,9 +30,5 @@ module.exports =
 </script>
 
 <style lang="stylus">
-.container > a
-  position absolute
-  left 250px
-  top 40px
 
 </style>
