@@ -57,6 +57,7 @@
     "karma-spec-reporter": "^0.0.26",
     "karma-vue-component": "^0.1.0",
     "karma-webpack": "^1.7.0",
+    "markdown-toc": "^0.12.5",
     "mocha": "^2.4.5",
     "parse5": "^2.1.5",
     "sass-loader": "^3.2.0",
@@ -85,8 +86,8 @@
     "dev": "vue-dev-server",
     "watch": "karma start --browsers Chrome --auto-watch --reporters spec",
     "test": "karma start --single-run",
-    "doctoc": "doctoc --maxlevel 3 README.md",
-    "preversion": "npm test && npm run doctoc",
+    "toc": "coffee build/generateToc.coffee",
+    "preversion": "npm test && npm run toc",
     "version": "npm run build && git add .",
     "postversion": "git push && git push --tags && npm publish",
     "ghpages": "vue-dev-server --static static/ && gh-pages -d static"
