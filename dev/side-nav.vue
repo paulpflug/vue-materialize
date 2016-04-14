@@ -11,7 +11,8 @@
     button.btn(@click="toggle" style="top: 10px" v-if="!fixed") Toggle
     p(v-if="fixed") Make your window smaller
     p(v-if="!fixed && !opened") drag the menu in!
-    a(href="https://github.com/paulpflug/vue-materialize/blob/master/dev/side-nav.vue") source
+    p
+      a(href="https://github.com/paulpflug/vue-materialize/blob/master/dev/side-nav.vue") source
 
 </template>
 
@@ -32,13 +33,3 @@ module.exports =
   components:
     "side-nav": require "../src/side-nav.coffee"
 </script>
-
-<style lang="stylus">
-.container2
-  position relative
-  & > a
-    position absolute
-    left 250px
-    top 40px
-
-</style>

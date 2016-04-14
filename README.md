@@ -24,7 +24,6 @@
 - file-input
 - scrollfire
 - tabs
-- tooltip
 - waves
 - date-picker
 
@@ -98,12 +97,12 @@ $roboto-font-path: "~materialize-css/fonts/roboto/";
 @import "~materialize-css/sass/components/forms/input-fields";
 @import "~materialize-css/sass/components/forms/switches";
 @import "~materialize-css/sass/components/toast";
+@import "~materialize-css/sass/components/tooltip";
 
 // NOT implemented yet:
 // @import "~materialize-css/sass/components/waves";
 // @import "~materialize-css/sass/components/cards";
 // @import "~materialize-css/sass/components/tabs";
-// @import "~materialize-css/sass/components/tooltip";
 // @import "~materialize-css/sass/components/materialbox";
 // @import "~materialize-css/sass/components/slider";
 // @import "~materialize-css/sass/components/date_picker/default";
@@ -272,6 +271,22 @@ mixins:[
   #do something on close
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/toaster) - [source for demo](dev/toaster.vue) - [doc: vue-toaster](https://github.com/vue-comps/vue-toaster)
+
+#### tooltip
+```coffee
+# in your component
+components:
+  "tooltip": require("vue-materialize/tooltip")
+# or, when using bundle.js
+components:
+  "tooltip": window.vueMaterialize.tooltip
+```
+```html
+<button>Hover me!
+  <tooltip>Some information</tooltip>
+</button>
+```
+[demo](https://paulpflug.github.io/vue-materialize/#!/tooltip) - [source for demo](dev/tooltip.vue) - [doc: vue-comps-tooltip](https://github.com/vue-comps/vue-comps-tooltip)
 
 #### forms
 ##### radio

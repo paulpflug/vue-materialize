@@ -21,6 +21,7 @@
     "vue-collapsible": "^0.1.0",
     "vue-comps-dropdown": "^0.1.0",
     "vue-comps-modal": "^0.1.0",
+    "vue-comps-tooltip": "^0.1.0",
     "vue-mixins": "^0.2.6",
     "vue-overlay": "^0.1.0",
     "vue-parallax": "^0.1.2",

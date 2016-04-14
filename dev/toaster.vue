@@ -28,7 +28,3 @@ module.exports =
     roundedtoast: ->
       @toast text:"I am round toast", classes: ["toast","rounded"]
 </script>
-
-<style lang="stylus">
-
-</style>

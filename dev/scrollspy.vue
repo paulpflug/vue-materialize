@@ -1,18 +1,18 @@
 <template lang="jade">
 .container
-  scrollspy
+  scrollspy(style="position:fixed;right:20px;top:20px")
     scrollspy-item(target="first") first
     scrollspy-item(target="second") second
     scrollspy-item(target="third") third
     scrollspy-item(target="fourth") fourth
-  #first.section
+  #first.section(style="height:600px")
     h3 First
     a(href="https://github.com/paulpflug/vue-materialize/blob/master/dev/scrollspy.vue") source
-  #second.section
+  #second.section(style="height:100px")
     h3 Second
-  #third.section
+  #third.section(style="height:500px")
     h3 Third
-  #fourth.section
+  #fourth.section(style="height:150px")
     h4 Fourth
 </template>
 
@@ -22,18 +22,3 @@ module.exports =
     "scrollspy": require "../scrollspy"
     "scrollspy-item": require "../scrollspy-item"
 </script>
-
-<style lang="stylus">
-#first
-  height 600px
-#second
-  height 100px
-#third
-  height 500px
-#fourth
-  height 150px
-.table-of-contents
-  position fixed
-  right 20px
-  top 20px
-</style>

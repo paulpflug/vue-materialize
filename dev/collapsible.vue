@@ -22,7 +22,8 @@
     collapsible-item
       p(slot="header") header3
       p body 3
-  a(href="https://github.com/paulpflug/vue-materialize/blob/master/dev/collapsible.vue") source
+  p
+    a(href="https://github.com/paulpflug/vue-materialize/blob/master/dev/collapsible.vue") source
 </template>
 
 <script lang="coffee">
@@ -33,10 +34,3 @@ module.exports =
     "collapsible-item" : require "../src/collapsible-item.coffee"
 
 </script>
-
-<style lang="stylus">
-.container > a
-  position absolute
-  left 40%
-  top 14px
-</style>
