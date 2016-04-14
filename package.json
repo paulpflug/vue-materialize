@@ -85,7 +85,8 @@
     "dev": "vue-dev-server",
     "watch": "karma start --browsers Chrome --auto-watch --reporters spec",
     "test": "karma start --single-run",
-    "preversion": "npm test",
+    "doctoc": "doctoc --maxlevel 3 README.md",
+    "preversion": "npm test && npm run doctoc",
     "version": "npm run build && git add .",
     "postversion": "git push && git push --tags && npm publish",
     "ghpages": "vue-dev-server --static static/ && gh-pages -d static"

@@ -12,7 +12,7 @@
 - Easy style modification
 - Only load what you need ([webpack code splitting](https://webpack.github.io/docs/code-splitting.html))
 
-#### What is missing:
+### What is missing:
 
 - fixed-action-buttons
 - reveal-card
@@ -38,8 +38,31 @@ npm install --save-dev style-loader css-loader sass-loader url-loader file-loade
 ```
 or include `build/bundle.js` (comes with npm install - 138kb - includes `Velocity.js`)
 
-## SCSS
-#### Webpack config
+# Table of contents
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [Style](#style)
+  - [Webpack config <sup>top^</sup>](#webpack-config-suptop%5Esup)
+  - [configure SCSS](#configure-scss)
+- [JS](#js)
+  - [collapsible](#collapsible)
+  - [dropdown](#dropdown)
+  - [modal](#modal)
+  - [parallax](#parallax)
+  - [pushpin](#pushpin)
+  - [scrollspy](#scrollspy)
+  - [side-nav](#side-nav)
+  - [toaster](#toaster)
+  - [tooltip](#tooltip)
+  - [forms](#forms)
+- [License](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Style
+### Webpack config <sup>[top^](#table-of-contents)</sup>
 ```coffee
 loaders: [
   { test: /\.woff(\d*)\??(\d*)$/, loader: "url-loader?limit=10000&mimetype=application/font-woff" }
@@ -49,7 +72,7 @@ loaders: [
   { test: /\.scss$/, loader: "style!css!sass?sourceMap"}
 ]
 ```
-#### SCSS inclusion
+### configure SCSS
 create a file, for example `materialize.config.scss`
 ```scss
 @charset "UTF-8";
@@ -117,8 +140,8 @@ Require it like this:
 ```js
 require("./materialize.config.scss")
 ```
-
-#### collapsible
+## JS
+### collapsible
 ```coffee
 ## whithin your module
 components:
@@ -142,7 +165,7 @@ components:
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/collapsible) - [source for demo](dev/collapsible.vue) - [doc: vue-collapsible](https://github.com/vue-comps/vue-collapsible)
 
-#### dropdown
+### dropdown
 ```coffee
 ## whithin your module
 components:
@@ -159,7 +182,7 @@ components:
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/dropdown) - [source for demo](dev/dropdown.vue) - [doc: vue-comps-dropdown](https://github.com/vue-comps/vue-comps-dropdown)
 
-#### modal
+### modal
 ```coffee
 ## whithin your module
 components:
@@ -182,7 +205,7 @@ components:
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/modal) - [source for demo](dev/modal.vue) - [doc: vue-comps-modal](https://github.com/vue-comps/vue-comps-modal)
 
-#### parallax
+### parallax
 ```coffee
 components:
   "parallax": require "vue-materialize/parallax"
@@ -197,7 +220,7 @@ components:
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/parallax) - [source for demo](dev/parallax.vue) - [doc: vue-parallax](https://github.com/vue-comps/vue-parallax)
 
-#### pushpin
+### pushpin
 ```coffee
 components:
   "pushpin": require "vue-materialize/pushpin"
@@ -211,7 +234,7 @@ components:
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/pushpin) - [source for demo](dev/pushpin.vue) - [doc: vue-pushpin](https://github.com/vue-comps/vue-pushpin)
 
-#### scrollspy
+### scrollspy
 ```coffee
 ## whithin your module
 components:
@@ -235,7 +258,7 @@ components:
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/scrollspy) - [source for demo](dev/scrollspy.vue) - [doc: vue-comps-scrollspy](https://github.com/vue-comps/vue-comps-scrollspy)
 
-#### side-nav
+### side-nav
 ```coffee
 # somewhere
 Vue.use(require('vue-touch'))
@@ -253,7 +276,7 @@ components:
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/side-nav) - [source for demo](dev/side-nav.vue) - [doc: vue-side-nav](https://github.com/vue-comps/vue-side-nav)
 
-#### toaster
+### toaster
 ```coffee
 # somewhere
 Vue.use(require('vue-touch'))
@@ -272,7 +295,7 @@ mixins:[
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/toaster) - [source for demo](dev/toaster.vue) - [doc: vue-toaster](https://github.com/vue-comps/vue-toaster)
 
-#### tooltip
+### tooltip
 ```coffee
 # in your component
 components:
@@ -288,8 +311,8 @@ components:
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/tooltip) - [source for demo](dev/tooltip.vue) - [doc: vue-comps-tooltip](https://github.com/vue-comps/vue-comps-tooltip)
 
-#### forms
-##### radio
+### forms
+#### radio
 ```html
 <input type="radio" id="one" value="One" v-model="picked">
 <label for="one">One</label>
@@ -299,7 +322,7 @@ components:
 <br>
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/forms/radio) - [source for demo](dev/forms/radio.vue) - [doc: radio](http://vuejs.org/guide/forms.html#Radio)
-##### checkbox
+#### checkbox
 ```html
 <input type="checkbox" id="one">
 <label for="one">One</label>
@@ -309,7 +332,8 @@ components:
 <br>
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/forms/checkbox) - [source for demo](dev/forms/checkbox.vue) - [doc: checkbox](http://vuejs.org/guide/forms.html#Checkbox)
-##### switch
+
+#### switch <sup><sup>[top](#table-of-contents)</sup></sup>
 ```coffee
 components:
   "switch": require "vue-materialize/switch"
@@ -323,13 +347,13 @@ components:
 </switch>
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/forms/switch) - [source for demo](dev/forms/switch.vue)
-###### Props
+##### Props
 | Name | type | default | description |
 | ---:| --- | ---| --- |
 | is-on | Boolean | false | (two-way) toggle state |
 | disabled | Boolean | false | is disabled |
 
-###### Events
+##### Events
 | Name |  description |
 | ---:| --- | ---| --- |
 | off |  will be emitted on click when state was on |
@@ -337,7 +361,7 @@ components:
 | toggle |  will be emitted on click |
 
 
-##### input-field
+#### input-field
 ```coffee
 ## whithin your module
 components:
@@ -346,7 +370,6 @@ components:
   "input-field": window.vueMaterialize.inputField
 ```
 more info to come..
-
 ## License
 Copyright (c) 2015 Paul Pflugradt
 Licensed under the MIT license.
