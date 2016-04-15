@@ -125,7 +125,6 @@ $roboto-font-path: "~materialize-css/fonts/roboto/";
 // @import "~materialize-css/sass/components/waves";
 // @import "~materialize-css/sass/components/cards";
 // @import "~materialize-css/sass/components/tabs";
-// @import "~materialize-css/sass/components/materialbox";
 // @import "~materialize-css/sass/components/slider";
 // @import "~materialize-css/sass/components/date_picker/default";
 // @import "~materialize-css/sass/components/date_picker/default.date";
@@ -180,6 +179,21 @@ components:
 </button>
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/dropdown) - [source for demo](dev/dropdown.vue) - [doc: vue-comps-dropdown](https://github.com/vue-comps/vue-comps-dropdown)
+
+### material-box <sup>[top^](#table-of-contents)</sup>
+```coffee
+## whithin your module
+components:
+  "material-box": require "vue-materialize/material-box"
+# or with bundle.js
+  "material-box": window.vueMaterialize.materialBox
+```
+```html
+<material-box style="width:200px",src="some/image.jpg">
+  <span slot="caption" style="color:white">a caption</span>
+</material-box>
+```
+[demo](https://paulpflug.github.io/vue-materialize/#!/material-box) - [source for demo](dev/material-box.vue) - [doc: vue-zoombox](https://github.com/vue-comps/vue-zoombox)
 
 ### modal <sup>[top^](#table-of-contents)</sup>
 ```coffee

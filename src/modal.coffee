@@ -18,7 +18,7 @@ modal.props.transitionIn.default = ({el,cb}) ->
       complete: cb
     }
   else
-    Velocity.hook(@$els.modal, "scaleX", 0.7)
+    Velocity.hook(el, "scaleX", 0.7)
     Velocity el, { top: "10%", opacity: 1, scaleX: 1}, {
       duration: 350,
       ease: "easeOutCubic",
