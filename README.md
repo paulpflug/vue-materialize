@@ -259,14 +259,8 @@ components:
 ```
 ```html
 <scrollspy>
-  <scrollspy-item>
-    <h4 slot="header">header1</h4>
-    <p>body 1</p>
-  </scrollspy-item>
-  <scrollspy-item>
-    <h4 slot="header">header21</h4>
-    <p>body 2</p>
-  </scrollspy-item>
+  <scrollspy-item target="idOfTarget">description of target</scrollspy-item>
+  <scrollspy-item target="idOfOtherTarget">description of other target</scrollspy-item>
 </scrollspy>
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/scrollspy) - [source for demo](dev/scrollspy.vue) - [doc: vue-comps-scrollspy](https://github.com/vue-comps/vue-comps-scrollspy)
