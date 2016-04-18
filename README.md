@@ -48,6 +48,7 @@ or include `build/bundle.js` (comes with npm install - 138kb - includes `Velocit
 - [JS](#js)
   * [collapsible](#collapsible-top)
   * [dropdown](#dropdown-top)
+  * [material-box](#material-box-top)
   * [modal](#modal-top)
   * [parallax](#parallax-top)
   * [pushpin](#pushpin-top)
