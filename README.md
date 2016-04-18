@@ -24,7 +24,6 @@
 - file-input
 - scrollfire
 - tabs
-- waves
 - date-picker
 
 # Install
@@ -36,7 +35,7 @@ npm install --save-dev webpack
 // style loaders
 npm install --save-dev style-loader css-loader sass-loader url-loader file-loader
 ```
-or include `build/bundle.js` (comes with npm install - 138kb - includes `Velocity.js`)
+or include `build/bundle.js` (comes with npm install - 150kb - includes `Velocity.js`)
 
 # Table of contents
 
@@ -56,7 +55,12 @@ or include `build/bundle.js` (comes with npm install - 138kb - includes `Velocit
   * [side-nav](#side-nav-top)
   * [toaster](#toaster-top)
   * [tooltip](#tooltip-top)
-  * [forms](#forms)
+  * [waves](#waves-top)
+- [forms](#forms)
+  * [radio](#radio-top)
+  * [checkbox](#checkbox-top)
+  * [switch](#switch-top)
+  * [input-field](#input-field-top)
 - [License](#license)
 
 <!-- tocstop -->
@@ -123,7 +127,6 @@ $roboto-font-path: "~materialize-css/fonts/roboto/";
 @import "~materialize-css/sass/components/tooltip";
 
 // NOT implemented yet:
-// @import "~materialize-css/sass/components/waves";
 // @import "~materialize-css/sass/components/cards";
 // @import "~materialize-css/sass/components/tabs";
 // @import "~materialize-css/sass/components/slider";
@@ -319,8 +322,27 @@ components:
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/tooltip) - [source for demo](dev/tooltip.vue) - [doc: vue-comps-tooltip](https://github.com/vue-comps/vue-comps-tooltip)
 
-### forms
-#### radio <sup>[top^](#table-of-contents)</sup>
+### waves <sup>[top^](#table-of-contents)</sup>
+```coffee
+# somewhere
+Vue.use(require('vue-touch'))
+
+# in your component
+components:
+  "waves": require("vue-materialize/waves")
+# or, when using bundle.js
+components:
+  "waves": window.vueMaterialize.waves
+```
+```html
+<waves>
+  <button>Click or touch me!</button>
+</waves>
+```
+[demo](https://paulpflug.github.io/vue-materialize/#!/waves) - [source for demo](dev/waves.vue) - [doc: vue-comps-waves](https://github.com/vue-comps/vue-comps-waves)
+
+## forms
+### radio <sup>[top^](#table-of-contents)</sup>
 ```html
 <input type="radio" id="one" value="One" v-model="picked">
 <label for="one">One</label>
@@ -330,7 +352,7 @@ components:
 <br>
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/forms/radio) - [source for demo](dev/forms/radio.vue) - [doc: radio](http://vuejs.org/guide/forms.html#Radio)
-#### checkbox <sup>[top^](#table-of-contents)</sup>
+### checkbox <sup>[top^](#table-of-contents)</sup>
 ```html
 <input type="checkbox" id="one">
 <label for="one">One</label>
@@ -341,7 +363,7 @@ components:
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/forms/checkbox) - [source for demo](dev/forms/checkbox.vue) - [doc: checkbox](http://vuejs.org/guide/forms.html#Checkbox)
 
-#### switch <sup>[top^](#table-of-contents)</sup>
+### switch <sup>[top^](#table-of-contents)</sup>
 ```coffee
 components:
   "switch": require "vue-materialize/switch"
@@ -355,13 +377,13 @@ components:
 </switch>
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/forms/switch) - [source for demo](dev/forms/switch.vue)
-##### Props <sup>[top^](#table-of-contents)</sup>
+#### Props <sup>[top^](#table-of-contents)</sup>
 | Name | type | default | description |
 | ---:| --- | ---| --- |
 | is-on | Boolean | false | (two-way) toggle state |
 | disabled | Boolean | false | is disabled |
 
-##### Events <sup>[top^](#table-of-contents)</sup>
+#### Events <sup>[top^](#table-of-contents)</sup>
 | Name |  description |
 | ---:| --- | ---| --- |
 | off |  will be emitted on click when state was on |
@@ -369,7 +391,7 @@ components:
 | toggle |  will be emitted on click |
 
 
-#### input-field <sup>[top^](#table-of-contents)</sup>
+### input-field <sup>[top^](#table-of-contents)</sup>
 ```coffee
 ## whithin your module
 components:

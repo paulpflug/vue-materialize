@@ -1,3 +1,5 @@
+webpack = require "webpack"
+path = require "path"
 module.exports =
   module:
     loaders: [
@@ -13,3 +15,10 @@ module.exports =
     ]
   resolve:
     extensions: ["",".webpack.js",".web.js",".js",".coffee",".vue"]
+    alias:
+      "vue-mixins": path.resolve(path.join(__dirname, "..","node_modules", "vue-mixins"))
+      "vue-filters": path.resolve(path.join(__dirname, "..","node_modules", "vue-filters"))
+      "velocity-animate": path.resolve(path.join(__dirname, "..","node_modules", "velocity-animate"))
+  plugins: [
+    new webpack.optimize.DedupePlugin()
+  ]

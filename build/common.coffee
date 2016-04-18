@@ -1,16 +1,27 @@
 window.vueMaterialize ?= {}
-window.vueMaterialize.collapsibleItem = require('../collapsible-item.js')
-window.vueMaterialize.collapsible = require('../collapsible.js')
-window.vueMaterialize.dropdown = require('../dropdown.js')
-window.vueMaterialize.inputField = require('../input-field.js')
-window.vueMaterialize.materialBox = require('../material-box.js')
-window.vueMaterialize.modal = require('../modal.js')
-window.vueMaterialize.parallax = require('../parallax.js')
-window.vueMaterialize.pushpin = require('../pushpin.js')
-window.vueMaterialize.scrollspyItem = require('../scrollspy-item.js')
-window.vueMaterialize.scrollspy = require('../scrollspy.js')
-window.vueMaterialize.sideNav = require('../side-nav.js')
-window.vueMaterialize.switch = require('../switch.js')
-window.vueMaterialize.toaster = require('../toaster.js')
-window.vueMaterialize.tooltip = require('../tooltip.js')
+
+camelize = (str) ->
+  str.replace /-(\w)/g, (_, c) ->
+    if c then c.toUpperCase() else ''
+req = require.context("..",false,/.js$/)
+
+for name in [
+    "collapsible-item"
+    "collapsible"
+    "dropdown"
+    "input-field"
+    "material-box"
+    "modal"
+    "parallax"
+    "pushpin"
+    "scrollspy-item"
+    "scrollspy"
+    "side-nav"
+    "switch"
+    "toaster"
+    "tooltip"
+    "waves"
+    ]
+  window.vueMaterialize[camelize(name)] = req("./#{name}.js")
+
 require('./materialize.config.scss')

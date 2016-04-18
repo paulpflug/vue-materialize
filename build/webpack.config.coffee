@@ -1,5 +1,5 @@
 webpack = require "webpack"
-
+path = require "path"
 module.exports =
   entry: "./build/common.coffee"
   output:
@@ -15,6 +15,13 @@ module.exports =
       { test: /\.scss$/, loader: "style!css!sass?sourceMap"}
     ]
   plugins: [
+    new webpack.optimize.DedupePlugin()
     new webpack.optimize.UglifyJsPlugin compress: warnings: false
     new webpack.optimize.OccurenceOrderPlugin()
+
   ]
+  resolve:
+    alias:
+      "vue-mixins": path.resolve(path.join(__dirname, "..","node_modules", "vue-mixins"))
+      "vue-filters": path.resolve(path.join(__dirname, "..","node_modules", "vue-filters"))
+      "velocity-animate": path.resolve(path.join(__dirname, "..","node_modules", "velocity-animate"))

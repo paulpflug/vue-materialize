@@ -1,4 +1,4 @@
-# out: ../box.js
+# out: ../material-box.js
 Velocity = require("velocity-animate")
 require "./overlay"
 box = require "vue-zoombox"
