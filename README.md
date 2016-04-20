@@ -50,6 +50,7 @@ or include `build/bundle.js` (comes with npm install - 150kb - includes `Velocit
   * [modal](#modal-top)
   * [parallax](#parallax-top)
   * [pushpin](#pushpin-top)
+  * [scrollfire](#scrollfire-top)
   * [scrollspy](#scrollspy-top)
   * [side-nav](#side-nav-top)
   * [toaster](#toaster-top)
