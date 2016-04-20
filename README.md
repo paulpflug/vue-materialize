@@ -251,6 +251,19 @@ components:
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/pushpin) - [source for demo](dev/pushpin.vue) - [doc: vue-pushpin](https://github.com/vue-comps/vue-pushpin)
 
+### scrollfire <sup>[top^](#table-of-contents)</sup>
+```coffee
+## whithin your module
+components:
+  "scrollfire": require "vue-materialize/scrollfire"
+# or with bundle.js
+  "scrollfire": window.vueMaterialize.scrollfire
+```
+```html
+<scrollfire @entered="doSomething"></scrollfire>
+```
+[demo](https://paulpflug.github.io/vue-materialize/#!/scrollfire) - [source for demo](dev/scrollfire.vue) - [doc: vue-scrollfire](https://github.com/vue-comps/vue-scrollfire)
+
 ### scrollspy <sup>[top^](#table-of-contents)</sup>
 ```coffee
 ## whithin your module

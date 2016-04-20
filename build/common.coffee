@@ -14,6 +14,7 @@ for name in [
     "modal"
     "parallax"
     "pushpin"
+    "scrollfire"
     "scrollspy-item"
     "scrollspy"
     "side-nav"

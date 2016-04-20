@@ -28,6 +28,7 @@
     "vue-parallax": "^0.1.2",
     "vue-pushpin": "^0.1.3",
     "vue-comps-scrollspy": "^0.1.0",
+    "vue-scrollfire":"^0.1.0",
     "vue-side-nav": "^0.1.4",
     "vueify-insert-css": "^1.0.0",
     "vue-toaster": "^0.1.3",
