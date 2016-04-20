@@ -22,7 +22,6 @@
 - select
 - range & slider
 - file-input
-- scrollfire
 - tabs
 - date-picker
 
