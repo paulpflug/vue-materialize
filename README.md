@@ -15,7 +15,6 @@
 ### What is missing:
 
 - fixed-action-buttons
-- reveal-card
 - carousel
 - character-counter (input/textarea)
 - textarea resize
@@ -34,7 +33,7 @@ npm install --save-dev webpack
 // style loaders
 npm install --save-dev style-loader css-loader sass-loader url-loader file-loader
 ```
-or include `build/bundle.js` (comes with npm install - 150kb - includes `Velocity.js`)
+or include `build/bundle.js` (comes with npm install - 155kb - includes `Velocity.js`)
 
 # Table of contents
 
@@ -44,6 +43,7 @@ or include `build/bundle.js` (comes with npm install - 150kb - includes `Velocit
   * [Webpack config](#webpack-config-top)
   * [configure SCSS](#configure-scss-top)
 - [JS](#js)
+  * [card](#card-top)
   * [collapsible](#collapsible-top)
   * [dropdown](#dropdown-top)
   * [material-box](#material-box-top)
@@ -116,6 +116,7 @@ $roboto-font-path: "~materialize-css/fonts/roboto/";
 
 // css for js modules
 // activate only what you need
+@import "~materialize-css/sass/components/cards";
 @import "~materialize-css/sass/components/sideNav";
 @import "~materialize-css/sass/components/dropdown";
 @import "~materialize-css/sass/components/modal";
@@ -127,7 +128,6 @@ $roboto-font-path: "~materialize-css/fonts/roboto/";
 @import "~materialize-css/sass/components/tooltip";
 
 // NOT implemented yet:
-// @import "~materialize-css/sass/components/cards";
 // @import "~materialize-css/sass/components/tabs";
 // @import "~materialize-css/sass/components/slider";
 // @import "~materialize-css/sass/components/date_picker/default";
@@ -143,6 +143,35 @@ Require it like this:
 require("./materialize.config.scss")
 ```
 ## JS
+### card <sup>[top^](#table-of-contents)</sup>
+```coffee
+## whithin your module
+components:
+  "card": require "vue-materialize/card"
+  "card-reveal": require "vue-materialize/card-reveal"
+  "card-toggle": require "vue-materialize/card-toggle"
+# or with bundle.js
+  "card": window.vueMaterialize.card
+  "card-reveal": window.vueMaterialize.cardReveal
+  "card-toggle": window.vueMaterialize.cardToggle
+```
+```html
+<card>
+  <card-toggle>
+    // some image
+  </cards-toggle>
+  <div>
+    <card-toggle>The title</card-toggle>
+    some short content
+  </div>
+  <card-reveal>
+    <card-toggle>The revealed title</card-toggle>
+    The revealed content
+  </card-reveal>
+</card>
+```
+[demo](https://paulpflug.github.io/vue-materialize/#!/card) - [source for demo](dev/card.vue) - [doc: vue-card](https://github.com/vue-comps/vue-card)
+
 ### collapsible <sup>[top^](#table-of-contents)</sup>
 ```coffee
 ## whithin your module

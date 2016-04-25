@@ -6,6 +6,9 @@ camelize = (str) ->
 req = require.context("..",false,/.js$/)
 
 for name in [
+    "card-reveal"
+    "card-toggle"
+    "card"
     "collapsible-item"
     "collapsible"
     "dropdown"
