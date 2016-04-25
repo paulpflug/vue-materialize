@@ -157,20 +157,22 @@ components:
 ```
 ```html
 <card>
-  <card-toggle>
+  <card-toggle class="card-image">
     // some image
   </cards-toggle>
-  <div>
-    <card-toggle>The title</card-toggle>
+  <div class="card-content">
+    <card-toggle class="card-title">The title</card-toggle>
     some short content
   </div>
   <card-reveal>
-    <card-toggle>The revealed title</card-toggle>
+    <card-toggle class="card-title">The revealed title</card-toggle>
     The revealed content
   </card-reveal>
 </card>
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/card) - [source for demo](dev/card.vue) - [doc: vue-card](https://github.com/vue-comps/vue-card)
+
+Of course you can also use the no-reveal [materializeCSS cards](http://materializecss.com/cards.html).
 
 ### collapsible <sup>[top^](#table-of-contents)</sup>
 ```coffee

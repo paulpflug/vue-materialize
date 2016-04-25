@@ -7,10 +7,10 @@
           img(src="http://materializecss.com/images/office.jpg")
 
         .card-content
-          card-toggle Title (click me)
+          card-toggle.card-title Title (click me)
           p Some Content
         card-reveal
-          card-toggle Title (click me)
+          card-toggle.card-title Title (click me)
           p Significantly more Content
   .row
     .col.s12.m6
@@ -19,10 +19,10 @@
           img(src="http://materializecss.com/images/office.jpg")
 
         .card-content
-          card-toggle Title (click me)
+          card-toggle.card-title Title (click me)
           p Some Content
         card-reveal
-          card-toggle Title (click me)
+          card-toggle.card-title Title (click me)
           p Significantly more Content
         .card-action
           a(href="#cards") Some action
