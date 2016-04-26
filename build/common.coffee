@@ -12,6 +12,7 @@ for name in [
     "collapsible-item"
     "collapsible"
     "dropdown"
+    "fixed-action-button"
     "input-field"
     "material-box"
     "modal"

@@ -14,7 +14,6 @@
 
 ### What is missing:
 
-- fixed-action-buttons
 - carousel
 - character-counter (input/textarea)
 - textarea resize
@@ -33,7 +32,7 @@ npm install --save-dev webpack
 // style loaders
 npm install --save-dev style-loader css-loader sass-loader url-loader file-loader
 ```
-or include `build/bundle.js` (comes with npm install - 155kb - includes `Velocity.js`)
+or include `build/bundle.js` (comes with npm install - 159kb - includes `Velocity.js`)
 
 # Table of contents
 
@@ -46,6 +45,7 @@ or include `build/bundle.js` (comes with npm install - 155kb - includes `Velocit
   * [card](#card-top)
   * [collapsible](#collapsible-top)
   * [dropdown](#dropdown-top)
+  * [fixed-action-button](#fixed-action-button-top)
   * [material-box](#material-box-top)
   * [modal](#modal-top)
   * [parallax](#parallax-top)
@@ -66,6 +66,13 @@ or include `build/bundle.js` (comes with npm install - 155kb - includes `Velocit
 <!-- tocstop -->
 
 ## Style
+
+For the usage of the css only components see the very good [materialize-css documentation](http://materializecss.com/).
+
+For style personalisation see the sass variable definitions in the original [repo](https://github.com/Dogfalo/materialize/blob/master/sass/components/_variables.scss).
+
+
+
 ### Webpack config <sup>[top^](#table-of-contents)</sup>
 ```coffee
 loaders: [
@@ -94,11 +101,14 @@ create a file, for example `materialize.config.scss`
 @import "~vue-materialize/sass/colorProcessor";
 // END: only specific colors
 
-// all available sass variables:
-// https://github.com/Dogfalo/materialize/blob/master/sass/components/_variables.scss
 @import "~materialize-css/sass/components/variables";
 @import "~materialize-css/sass/components/normalize";
 @import "~materialize-css/sass/components/global";
+
+// modify variables here
+// all available sass variables:
+// https://github.com/Dogfalo/materialize/blob/master/sass/components/_variables.scss
+// e.g. $dropdown-bg-color: black;
 
 // css only, no JS needed for these
 // activate only what you need
@@ -147,9 +157,9 @@ require("./materialize.config.scss")
 ```coffee
 ## whithin your module
 components:
-  "card": require "vue-materialize/card"
-  "card-reveal": require "vue-materialize/card-reveal"
-  "card-toggle": require "vue-materialize/card-toggle"
+  "card": require("vue-materialize/card")
+  "card-reveal": require("vue-materialize/card-reveal")
+  "card-toggle": require("vue-materialize/card-toggle")
 # or with bundle.js
   "card": window.vueMaterialize.card
   "card-reveal": window.vueMaterialize.cardReveal
@@ -178,8 +188,8 @@ Of course you can also use the no-reveal [materializeCSS cards](http://materiali
 ```coffee
 ## whithin your module
 components:
-  "collapsible": require "vue-materialize/collapsible"
-  "collapsible-item": require "vue-materialize/collapsible-item"
+  "collapsible": require("vue-materialize/collapsible")
+  "collapsible-item": require("vue-materialize/collapsible-item")
 # or with bundle.js
   "collapsible": window.vueMaterialize.collapsible
   "collapsible-item": window.vueMaterialize.collapsibleItem
@@ -202,7 +212,7 @@ components:
 ```coffee
 ## whithin your module
 components:
-  "dropdown": require "vue-materialize/dropdown"
+  "dropdown": require("vue-materialize/dropdown")
 # or with bundle.js
   "dropdown": window.vueMaterialize.dropdown
 ```
@@ -215,11 +225,33 @@ components:
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/dropdown) - [source for demo](dev/dropdown.vue) - [doc: vue-comps-dropdown](https://github.com/vue-comps/vue-comps-dropdown)
 
+### fixed-action-button <sup>[top^](#table-of-contents)</sup>
+```coffee
+## whithin your module
+components:
+  "fab": require("vue-materialize/fixed-action-button")
+# or with bundle.js
+  "fab": window.vueMaterialize.fixedActionButton
+```
+```html
+<fab style="bottom:20px;right:20px">
+  <a class="btn-floating btn-large" slot="fab">hover</button>
+  <li><a class="btn-floating">1</a></li>
+  <li><a class="btn-floating">2</a></li>
+</fab>
+```
+[demo](https://paulpflug.github.io/vue-materialize/#!/fixed-action-button) - [source for demo](dev/fixed-action-button.vue) - [doc: vue-fixed-action-button](https://github.com/vue-comps/vue-fixed-action-button)
+
+#### Additional props <sup>[top^](#table-of-contents)</sup>
+| Name | type | default | description |
+| ---:| --- | ---| --- |
+| horizontal | Boolean | false | adds horizontal to class of `div` |
+
 ### material-box <sup>[top^](#table-of-contents)</sup>
 ```coffee
 ## whithin your module
 components:
-  "material-box": require "vue-materialize/material-box"
+  "material-box": require("vue-materialize/material-box")
 # or with bundle.js
   "material-box": window.vueMaterialize.materialBox
 ```
@@ -234,7 +266,7 @@ components:
 ```coffee
 ## whithin your module
 components:
-  "modal": require "vue-materialize/modal"
+  "modal": require("vue-materialize/modal")
 # or with bundle.js
   "modal": window.vueMaterialize.modal
 ```
@@ -256,7 +288,7 @@ components:
 ### parallax <sup>[top^](#table-of-contents)</sup>
 ```coffee
 components:
-  "parallax": require "vue-materialize/parallax"
+  "parallax": require("vue-materialize/parallax")
 # or with bundle.js
   "parallax": window.vueMaterialize.parallax
 ```
@@ -271,7 +303,7 @@ components:
 ### pushpin <sup>[top^](#table-of-contents)</sup>
 ```coffee
 components:
-  "pushpin": require "vue-materialize/pushpin"
+  "pushpin": require("vue-materialize/pushpin")
 # or with bundle.js
   "pushpin": window.vueMaterialize.pushpin
 ```
@@ -286,7 +318,7 @@ components:
 ```coffee
 ## whithin your module
 components:
-  "scrollfire": require "vue-materialize/scrollfire"
+  "scrollfire": require("vue-materialize/scrollfire")
 # or with bundle.js
   "scrollfire": window.vueMaterialize.scrollfire
 ```
@@ -299,8 +331,8 @@ components:
 ```coffee
 ## whithin your module
 components:
-  "scrollspy": require "vue-materialize/scrollspy"
-  "scrollspy-item": require "vue-materialize/scrollspy-item"
+  "scrollspy": require("vue-materialize/scrollspy")
+  "scrollspy-item": require("vue-materialize/scrollspy-item")
 # or with bundle.js
   "scrollspy": window.vueMaterialize.scrollspy
   "scrollspy-item": window.vueMaterialize.scrollspyItem
@@ -320,7 +352,7 @@ Vue.use(require('vue-touch'))
 
 # in your component
 components:
-  "side-nav": require "vue-materialize/side-nav"
+  "side-nav": require("vue-materialize/side-nav")
 # or with bundle.js
   "side-nav": window.vueMaterialize.sideNav
 ```
@@ -338,7 +370,7 @@ Vue.use(require('vue-touch'))
 
 # in your component
 mixins:[
-  require "vue-materialize/toaster"
+  require("vue-materialize/toaster")
   # or with bundle.js
   window.vueMaterialize.toaster
 ]
@@ -410,7 +442,7 @@ components:
 ### switch <sup>[top^](#table-of-contents)</sup>
 ```coffee
 components:
-  "switch": require "vue-materialize/switch"
+  "switch": require("vue-materialize/switch")
 # or with bundle.js
   "switch": window.vueMaterialize.switch
 ```
@@ -439,7 +471,7 @@ components:
 ```coffee
 ## whithin your module
 components:
-  "input-field": require "vue-materialize/input-field"
+  "input-field": require("vue-materialize/input-field")
 # or with bundle.js
   "input-field": window.vueMaterialize.inputField
 ```
