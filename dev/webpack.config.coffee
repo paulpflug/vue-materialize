@@ -13,6 +13,9 @@ module.exports =
       { test: /\.svg\??(\d*)$/,    loader: "file-loader" }
       { test: /\.scss$/, loader: "style!css!sass?sourceMap"}
     ]
+    postLoaders: [
+      { test: /vue-icons/, loader: "callback-loader"}
+    ]
   resolve:
     extensions: ["",".webpack.js",".web.js",".js",".coffee",".vue"]
     alias:
@@ -22,3 +25,5 @@ module.exports =
   plugins: [
     new webpack.optimize.DedupePlugin()
   ]
+  callbackLoader:
+    require("vue-icons/icon-loader")(["material-cancel"])

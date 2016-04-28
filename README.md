@@ -152,6 +152,35 @@ Require it like this:
 ```js
 require("./materialize.config.scss")
 ```
+
+## Icons
+
+No icons are included in the bundle.
+
+You can either take the [Google Material Design Icons](https://design.google.com/icons/) as a font and use them the materializeCSS way:
+```html
+<i class="material-icons">add</i>
+```
+
+or, if you use webpack, you could use [vue-icons](git://github.com/vue-comps/vue-icons), this will allow you to load only the icons you need. It comes modified with vue-materialize to make usage even easier:
+```coffee
+components:
+  "icon": require("vue-materialize/icon")
+```
+```html
+<icon name="material-add"></icon>
+```
+
+Please be aware of the additional necessary `callback-loader` dependency and webpack config :
+```coffee
+module:
+  postLoaders: [
+    { test: /vue-icons/, loader: "callback-loader"}
+  ]
+callbackLoader:
+  require("vue-icons/icon-loader")(["material-add"]) # add all the icons you need
+```
+
 ## JS
 ### card <sup>[top^](#table-of-contents)</sup>
 ```coffee
