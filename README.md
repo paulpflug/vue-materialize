@@ -41,6 +41,7 @@ or include `build/bundle.js` (comes with npm install - 159kb - includes `Velocit
 - [Style](#style)
   * [Webpack config](#webpack-config-top)
   * [configure SCSS](#configure-scss-top)
+- [Icons](#icons-top)
 - [JS](#js)
   * [card](#card-top)
   * [collapsible](#collapsible-top)
@@ -153,7 +154,7 @@ Require it like this:
 require("./materialize.config.scss")
 ```
 
-## Icons
+## Icons <sup>[top^](#table-of-contents)</sup>
 
 No icons are included in the bundle.
 
@@ -161,17 +162,15 @@ You can either take the [Google Material Design Icons](https://design.google.com
 ```html
 <i class="material-icons">add</i>
 ```
+or use `vue-icons`:
 
-or, if you use webpack, you could use [vue-icons](git://github.com/vue-comps/vue-icons), this will allow you to load only the icons you need. It comes modified with vue-materialize to make usage even easier:
-```coffee
-components:
-  "icon": require("vue-materialize/icon")
+#### vue-icons
+If you use webpack, you could use [vue-icons](git://github.com/vue-comps/vue-icons), this will allow you to load only the icons you need.
+Additional dependencies:
+```sh
+npm install --save-dev vue-icons callback-loader
 ```
-```html
-<icon name="material-add"></icon>
-```
-
-Please be aware of the additional necessary `callback-loader` dependency and webpack config :
+Additional webpack config:
 ```coffee
 module:
   postLoaders: [
@@ -180,6 +179,15 @@ module:
 callbackLoader:
   require("vue-icons/icon-loader")(["material-add"]) # add all the icons you need
 ```
+##### Usage
+```coffee
+components:
+  "icon": require("vue-materialize/icon")
+```
+```html
+<icon name="material-add"></icon>
+```
+
 
 ## JS
 ### card <sup>[top^](#table-of-contents)</sup>
