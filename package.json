@@ -76,7 +76,7 @@
     "vue-dev-server": "^0.2.10",
     "vue-hot-reload-api": "^1.3.2",
     "vue-html-loader": "^1.2.2",
-    "vue-icons": "^0.1.0",
+    "vue-icons": "^0.1.1",
     "vue-loader": "^8.2.2",
     "vue-style-loader": "^1.0.0",
     "vue-touch": "^1.0.2",
