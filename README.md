@@ -310,13 +310,13 @@ components:
 ```html
 <button> Open Modal
   <modal>
-    <modal-content>
+    <div class="modal-content">
       <h4>Header</h4>
       <p>Content</p>
-    </modal-content>
-    <modal-footer>
+    </div>
+    <div class="modal-footer">
       <button class="btn btn-flat">close</button>
-    </modal-footer>
+    </div class="modal-footer">
   </modal>
 </button>
 ```
