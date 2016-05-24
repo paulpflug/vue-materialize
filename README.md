@@ -395,7 +395,7 @@ components:
 ```
 ```html
 <side-nav>
-  <li><a>First Text</a><li>
+  <li><a>First Text</a></li>
 </side-nav>
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/side-nav) - [source for demo](dev/side-nav.vue) - [doc: vue-side-nav](https://github.com/vue-comps/vue-side-nav)
