@@ -34,6 +34,27 @@ npm install --save-dev style-loader css-loader sass-loader url-loader file-loade
 ```
 or include `build/bundle.js` (comes with npm install - 159kb - includes `Velocity.js`)
 
+
+### Import syntax
+commonJS allows to require a single js file:
+```coffee
+components:
+  "fab": require("vue-materialize/fixed-action-button") # loads the fixed-action-button.js in the vue-materialize folder
+```
+
+This is not possible with the es6 import/export.
+You can still use it like this:
+```js
+import {fixedActionButton} from "vue-materialize"
+components: {
+  "fab": fixedActionButton
+}
+```
+However, webpack will add ALL components to your bundle this way.
+
+Webpack 2 comes with tree-shaking to remove all unused components again.
+So if you really want to use the import syntax please migrate to webpack 2.
+
 # Table of contents
 
 <!-- toc -->
@@ -152,6 +173,8 @@ $roboto-font-path: "~materialize-css/fonts/roboto/";
 Require it like this:
 ```js
 require("./materialize.config.scss")
+or
+import "./materialize.config.scss"
 ```
 
 ## Icons <sup>[top^](#table-of-contents)</sup>

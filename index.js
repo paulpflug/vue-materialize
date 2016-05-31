@@ -1,0 +1,22 @@
+module.exports = {
+  cardReveal: require("./card-reveal"),
+  cardToggle: require("./card-toggle"),
+  card: require("./card"),
+  collapsibleItem: require("./collapsible-item"),
+  collapsible: require("./collapsible"),
+  dropdown: require("./dropdown"),
+  fixedActionButton: require("./fixed-action-button"),
+  inputField: require("./input-field"),
+  materialBox: require("./material-box"),
+  modal: require("./modal"),
+  parallax: require("./parallax"),
+  pushpin: require("./pushpin"),
+  scrollfire: require("./scrollfire"),
+  scrollspyItem: require("./scrollspy-item"),
+  scrollspy: require("./scrollspy"),
+  sideNav: require("./side-nav"),
+  switch: require("./switch"),
+  toaster: require("./toaster"),
+  tooltip: require("./tooltip"),
+  waves: require("./waves")
+}
