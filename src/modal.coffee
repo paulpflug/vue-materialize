@@ -2,11 +2,13 @@
 Velocity = require("velocity-animate")
 require "./overlay"
 modal = require "vue-comps-modal"
+
 modal.props.bottomSheet =
   type: Boolean
   default: false
-modal.compiled = ->
-  @classes.push "bottom-sheet" if @bottomSheet
+modal.computed.mergeClass = ->
+  modal: true
+  "bottom-sheet": @bottomSheet
 
 modal.props.transitionIn.default = ({el,cb}) ->
   Velocity el, "stop"

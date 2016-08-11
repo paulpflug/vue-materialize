@@ -46,7 +46,10 @@ div(
     @blur="onInputBlur"
     @keyup.enter="onConfirmTrigger"
     )
-    span(slot="placeholder" v-if="placeholder") {{placeholder}}
+    span(
+      slot="placeholder"
+      v-if="placeholder"
+      ) {{placeholder}}
     label(
       slot="label"
       v-if="label"
@@ -54,7 +57,7 @@ div(
       v-bind:class="{active: isActive}"
       v-bind:data-error="dataError"
       v-bind:data-success="dataSuccess"
-    ) {{label}}
+      ) {{label}}
     span.character-counter(
       slot="label"
       v-if="length > 0"
@@ -130,20 +133,24 @@ module.exports =
       @value = val
     setValid:  ->
       @isValid = true
-      @$dispatch "valid", @value
+      @$emit "valid", @value
     setInvalid: ->
       @isValid = false
-      @$dispatch "invalid", @value
+      @$emit "invalid", @value
     setActive: ->
       @isActive = true
+    setInactive: ->
+      @isActive = false
+    setFocused: ->
+      @isFocused = true
       for child in @$el.children
         if child.nodeName == "I"
           if child.classList
             child.classList.add("active")
           else
             child.className += " active"
-    setInactive: ->
-      @isActive = false
+    setUnfocused: ->
+      @isFocused = false
       for child in @$el.children
         if child.nodeName == "I"
           child.className = child.className.replace( " active", "" )
@@ -177,19 +184,19 @@ module.exports =
     onInputFocus: ->
       @setActive()
       unless @readonly
-        @isFocused = true
-      @$dispatch "focus"
+        @setFocused()
+      @$emit "focus"
     onInputBlur: ->
-      @isFocused = false
+      @setUnfocused()
       unless @value || @placeholder
         @setInactive()
-      @$dispatch "blur"
+      @$emit "blur"
     onChangeTrigger: ->
-      @$dispatch "change", arguments
+      @$emit "change", arguments
       @checkValidity()
     onConfirmTrigger: ->
       unless @isInvalid
-        @$dispatch "confirm"
+        @$emit "confirm"
   watch:
     "value": "onChangeTrigger"
   ready: ->
@@ -197,6 +204,6 @@ module.exports =
     if @autofocus or @value or @placeholder
       @setActive()
       unless @readonly or @placeholder
-        @isFocused = true
+        @setFocused()
 
 </script>
