@@ -1,4 +1,4 @@
 # out: ../icon.js
 i = require "vue-icons"
-i.template = "<i class='material-icons'>"+i.template+"</i>"
+i.template = i.template.replace("<span","<i class='material-icons'").replace("</span>","</i>")
 module.exports = i

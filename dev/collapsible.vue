@@ -16,7 +16,7 @@
     collapsible-item
       p(slot="header") header1
       p body 1
-    collapsible-item(is-active)
+    collapsible-item(is-opened)
       p(slot="header") header2
       p body 2
     collapsible-item

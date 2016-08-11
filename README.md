@@ -15,8 +15,6 @@
 ### What is missing:
 
 - carousel
-- character-counter (input/textarea)
-- textarea resize
 - select
 - range & slider
 - file-input
@@ -125,6 +123,7 @@ create a file, for example `materialize.config.scss`
 
 @import "~materialize-css/sass/components/variables";
 @import "~materialize-css/sass/components/normalize";
+@import "~materialize-css/sass/components/typography";
 @import "~materialize-css/sass/components/global";
 
 // modify variables here
@@ -137,7 +136,6 @@ create a file, for example `materialize.config.scss`
 $roboto-font-path: "~materialize-css/fonts/roboto/";
 @import "~materialize-css/sass/components/roboto";
 @import "~materialize-css/sass/components/icons-material-design"; // icons are no long included in materializeCSS
-@import "~materialize-css/sass/components/typography";
 @import "~materialize-css/sass/components/buttons";
 @import "~materialize-css/sass/components/grid";
 @import "~materialize-css/sass/components/navbar";
@@ -437,7 +435,7 @@ mixins:[
 ```
 ```coffee
 # in the instance (text is mandatory)
-@toast text:"I'm toast", classes:["toast","rounded"], timeout:4000, cb: ->
+@toast(text:"I'm toast", classes:["toast","rounded"], timeout:4000, cb: ->)
   #do something on close
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/toaster) - [source for demo](dev/toaster.vue) - [doc: vue-toaster](https://github.com/vue-comps/vue-toaster)
@@ -535,7 +533,34 @@ components:
 # or with bundle.js
   "input-field": window.vueMaterialize.inputField
 ```
-more info to come..
+```html
+<div class="row">
+  <input-field class="s6" label="name"></input-field>
+    <!-- optional -->
+    <icon name="fa-user", slot="icon", class="prefix"></icon>
+</div>
+<!-- no wrapping row for textarea -->
+<input-field class="s6" label="Some text" textarea></input-field>
+```
+[demo](https://paulpflug.github.io/vue-materialize/#!/forms/input-field) - [source for demo](dev/forms/input-field.vue)
+#### Props <sup>[top^](#table-of-contents)</sup>
+Name | type | default | description
+---:| --- | ---| ---
+autofocus | Boolean | false | autofocus
+disabled | Boolean | false | disabled
+readonly | Boolean | false | readonly
+textarea | Boolean | false | use `<textarea>` instead of `<input>`
+type | String | - | type for `<input>`
+validate | Function | - | use for validating input, argument will be the current value
+dataError | String | - | message to display on invalid input. Used with validate
+dataSuccess | String | - | message to display on valid input. Used with validate
+label | String | - | description of the input
+value | String | - | preset the value
+length | Number | 0 | maximum length of input
+
+#### Events <sup>[top^](#table-of-contents)</sup>
+`focus` and `blur` are pass-through
+
 ## License
 Copyright (c) 2015 Paul Pflugradt
 Licensed under the MIT license.

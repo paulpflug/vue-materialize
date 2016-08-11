@@ -1,5 +1,5 @@
 <template lang="jade">
-.container
+.container(style="padding: 20px")
   .btn.btn-floating
     icon(name="material-cancel")
   p

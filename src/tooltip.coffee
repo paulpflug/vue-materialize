@@ -1,7 +1,7 @@
 # out: ../tooltip.js
 Velocity = require("velocity-animate")
 tooltip = require "vue-comps-tooltip"
-tooltip.props.class.default = "material-tooltip"
+tooltip.props.class.default = -> ["material-tooltip"]
 tooltip.props.backdropStyle =
   type:Object
   default: ->
@@ -13,7 +13,7 @@ tooltip.props.backdropStyle =
     marginTop: null
     marginLeft: null
 tooltip.template = """
-  <div :style=style v-if=opened v-el:tt=v-el:tt v-bind:class=[class]>
+  <div :style=computedStyle v-if=opened v-el:tt v-bind:class=class style="display:block">
     <div class="backdrop" :style="backdropStyle"></div>
     <slot>No content</slot>
   </div>"""
@@ -59,8 +59,8 @@ tooltip.props.transitionIn.default = ({el,pos,style,cb}) ->
   else
     scale = width / 10
     scale = 6 if scale < 6
-  @style.top = style.top
-  @style.left = style.left
+  @mergeStyle.top = style.top
+  @mergeStyle.left = style.left
   @$nextTick ->
     Velocity backdrop, "stop"
     Velocity backdrop, {opacity:1}, {duration: 55, delay: 0, queue: false}
