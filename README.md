@@ -189,7 +189,7 @@ or use `vue-icons`:
 If you use webpack, you could use [vue-icons](git://github.com/vue-comps/vue-icons), this will allow you to load only the icons you need.
 Additional dependencies:
 ```sh
-npm install --save-dev vue-icons callback-loader
+npm install --save-dev callback-loader
 ```
 Additional webpack config:
 ```coffee
