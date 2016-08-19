@@ -1,12 +1,13 @@
 <template lang="jade">
 .container
-  p
-    a(href="https://github.com/paulpflug/vue-materialize/blob/master/dev/forms/switch.vue") source
-  p
-    switch(@on="onOn" @off="onOff" @toggle="onToggle")
-  p
-    switch(disabled)
+  br
+  switch(@on="onOn" @off="onOff" @toggle="onToggle")
+  p disabled:
+  switch(disabled)
   p Open console for events
+  br
+  a(href="https://github.com/paulpflug/vue-materialize/blob/master/dev/forms/switch.vue") source
+
 
 </template>
 
@@ -14,7 +15,7 @@
 require("../materialize.config.scss")
 module.exports =
   components:
-    "switch" : require "../../src/switch.vue"
+    "switch" : require "../../src/switch.coffee"
   methods:
     onOn: ->
       console.log "isOn"

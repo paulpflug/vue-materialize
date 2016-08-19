@@ -510,20 +510,7 @@ components:
   <span slot="on">SomeOnLabel</span> <!-- defaults to On -->
 </switch>
 ```
-[demo](https://paulpflug.github.io/vue-materialize/#!/forms/switch) - [source for demo](dev/forms/switch.vue)
-#### Props <sup>[top^](#table-of-contents)</sup>
-| Name | type | default | description |
-| ---:| --- | ---| --- |
-| is-on | Boolean | false | (two-way) toggle state |
-| disabled | Boolean | false | is disabled |
-
-#### Events <sup>[top^](#table-of-contents)</sup>
-| Name |  description |
-| ---:| --- | ---| --- |
-| off |  will be emitted on click when state was on |
-| on |  will be emitted on click when state was off |
-| toggle |  will be emitted on click |
-
+[demo](https://paulpflug.github.io/vue-materialize/#!/forms/switch) - [source for demo](dev/forms/switch.vue) - [doc: vue-toggle](https://github.com/vue-comps/vue-toggle)
 
 ### input-field <sup>[top^](#table-of-contents)</sup>
 ```coffee
@@ -556,6 +543,7 @@ dataError | String | - | message to display on invalid input. Used with validate
 dataSuccess | String | - | message to display on valid input. Used with validate
 label | String | - | description of the input
 value | String | - | preset the value
+placeholder | String | - | sets a placeholder
 length | Number | 0 | maximum length of input
 
 #### Events <sup>[top^](#table-of-contents)</sup>

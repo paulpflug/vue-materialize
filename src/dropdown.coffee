@@ -1,6 +1,9 @@
 # out: ../dropdown.js
 Velocity = require("velocity-animate")
 ci = require "vue-comps-dropdown"
+ci.computed ?= {}
+ci.computed.mergeClass = ->
+  return ["dropdown-content"]
 ci.props.transitionIn.default = ({el,cb}) ->
   Velocity el, "stop"
   Velocity el, "slideDown",{
