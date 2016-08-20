@@ -35,7 +35,7 @@
     "vue-side-nav": "^0.3.0",
     "vueify-insert-css": "^1.0.0",
     "vue-toaster": "^0.1.3",
-    "vue-drag-handle": "^0.2.0",
+    "vue-drag-handle": "^1.0.0",
     "vue-zoombox": "^0.1.0",
     "vue-textarea": "^0.2.0",
     "vue-toggle": "^1.0.1"
