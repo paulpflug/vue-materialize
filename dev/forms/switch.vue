@@ -7,8 +7,6 @@
   p Open console for events
   br
   a(href="https://github.com/paulpflug/vue-materialize/blob/master/dev/forms/switch.vue") source
-
-
 </template>
 
 <script lang="coffee">

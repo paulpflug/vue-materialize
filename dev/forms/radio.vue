@@ -11,7 +11,6 @@
   p
     input(type="radio",id="three",value="three",v-model="picked",disabled)
     label(for="three") disabled
-
 </template>
 
 <script lang="coffee">

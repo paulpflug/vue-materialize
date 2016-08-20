@@ -11,7 +11,6 @@
   p
     input(type="checkbox",id="three",disabled)
     label(for="three") disabled
-
 </template>
 
 <script lang="coffee">
