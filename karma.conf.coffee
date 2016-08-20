@@ -29,4 +29,4 @@ module.exports = (config) ->
       require("karma-chai-spies")
       require("karma-vue-component")
     ]
-    browsers: ["Chrome","Firefox"]
+    browsers: ["Chromium","Firefox"]

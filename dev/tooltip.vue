@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
 .container
   p
     a(href="https://github.com/paulpflug/vue-materialize/blob/master/dev/tooltip.vue") source

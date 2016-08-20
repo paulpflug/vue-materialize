@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
 .container
   br
   switch(@on="onOn" @off="onOff" @toggle="onToggle")

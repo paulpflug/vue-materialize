@@ -1,7 +1,6 @@
-<template lang="jade">
-
+<template lang="pug">
 .container
-  side-nav(:is-opened.sync="opened",:is-fixed.sync="fixed" v-ref:side-nav fixed)
+  side-nav(v-bind:is-opened.sync="opened",v-bind:is-fixed.sync="fixed" v-ref:side-nav fixed)
     li
       a First Link
     li
@@ -13,17 +12,15 @@
     p(v-if="!fixed && !opened") drag the menu in!
     p
       a(href="https://github.com/paulpflug/vue-materialize/blob/master/dev/side-nav.vue") source
-
 </template>
 
 <script lang="coffee">
 module.exports =
   mixins:[
-    require("vue-mixins/getVue")
+    require("vue-mixins/vue")
   ]
   beforeCompile: ->
-    Vue = @getVue()
-    Vue.use(require('vue-touch'))
+    @Vue.use(require('vue-touch'))
   data: ->
     opened: false
     fixed:false

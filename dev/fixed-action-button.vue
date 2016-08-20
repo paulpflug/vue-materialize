@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
 .container
   fab(style="bottom:20px;right:20px")
     a.btn-floating.btn-large(slot="fab") hover

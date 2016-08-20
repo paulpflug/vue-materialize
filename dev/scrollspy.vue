@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
 .container
   scrollspy(style="position:fixed;right:20px;top:20px")
     scrollspy-item(target="first") first

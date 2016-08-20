@@ -4,6 +4,7 @@ require "./overlay"
 sideNav = require "vue-side-nav"
 
 sideNav.props.transition.default = ({el,style,cb}) ->
+  @setCss el, "transform", "translateX(0)"
   Velocity el, "stop"
   Velocity el, style, {
     duration: 300

@@ -1,5 +1,5 @@
 // out: ..
-<template lang="jade">
+<template lang="pug">
 div(
   v-bind:class="textarea?['row']:computedClass")
   slot(name="icon")
@@ -106,6 +106,7 @@ module.exports =
     "length":
       type: Number
       default: 0
+      coerce: Number
   data: ->
     isFocused: false
     isActive: false

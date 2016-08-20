@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
 .container(style="padding: 20px")
   .btn.btn-floating
     icon(name="material-cancel")

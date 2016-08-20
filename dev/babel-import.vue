@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
 parallax(src="http://materializecss.com/images/parallax1.jpg")
   .loading(slot="loading") loading...
 .container(style="height:500px")

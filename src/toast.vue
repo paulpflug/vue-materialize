@@ -1,7 +1,7 @@
 // out: ..
-<template lang="jade">
-div(:class="options.classes",:style="style",transition="fade") {{options.text}}
-  drag-handle(@move="move",@max="close",@aborted="abort",:max-right=125,:max-left=125,style="width:100%;left:0")
+<template lang="pug">
+div(v-bind:class="options.classes",v-bind:style="style",transition="fade") {{options.text}}
+  drag-handle(@move="move",@max="close",@aborted="abort",v-bind:max-right=125,v-bind:max-left=125,style="width:100%;left:0")
 </template>
 
 <script lang="coffee">

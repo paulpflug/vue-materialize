@@ -1,23 +1,22 @@
-<template lang="jade">
+<template lang="pug">
 .container(style="height:1500px;padding-left:200px;padding-top:50px")
   a(href="https://github.com/vue-comps/vue-comps-scrollspy/blob/master/dev/basic.vue") source
   p scroll down, will only fire once. Reload to reset
   div(style="margin-top:800px;width:200px;height:200px;background-color:blue") div
     scrollfire(@entered="entered")
-    scrollfire(@entered="enteredOffset",:offset=200)
-    scrollfire(@entered="enteredNegativOffset",:offset=-200)
-    scrollfire(@entered="enteredAfter",:after=2000)
+    scrollfire(@entered="enteredOffset",v-bind:offset=200)
+    scrollfire(@entered="enteredNegativOffset",v-bind:offset=-200)
+    scrollfire(@entered="enteredAfter",v-bind:after=2000)
 </template>
 
 <script lang="coffee">
 module.exports =
   mixins:[
-    require("vue-mixins/getVue")
+    require("vue-mixins/vue")
     require("../src/toaster.coffee")
   ]
   beforeCompile: ->
-    Vue = @getVue()
-    Vue.use(require('vue-touch'))
+    @Vue.use(require('vue-touch'))
   components:
     "scrollfire": require "../src/scrollfire.coffee"
   methods:
