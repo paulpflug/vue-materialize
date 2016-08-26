@@ -552,9 +552,12 @@ length | Number | 0 | maximum length of input
 ## Changelog
 
 - 0.3.0  
+`side-nav` and `modal` now have `zIndex` prop  
+`modal` remove `close` event listening in preperation for `2.0.0`  
+`vue-icons` changed positioning again  
 `vue-comps-waves` changes to attach to parent instead of being the parent  
 `collapsible` header element now is `a` instead of `div`  
-`dropdown` will be positioned as a sibling instead of child
+`dropdown` will be positioned as a sibling instead of child  
 
 ## License
 Copyright (c) 2015 Paul Pflugradt

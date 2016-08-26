@@ -1,6 +1,6 @@
 <template lang="pug">
 .container(style="padding: 20px")
-  .btn.btn-floating
+  button.btn.btn-floating
     icon(name="material-cancel")
   p
     a(href="https://github.com/paulpflug/vue-materialize/blob/master/dev/icon.vue") source
