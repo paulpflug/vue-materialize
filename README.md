@@ -469,9 +469,9 @@ components:
   "waves": window.vueMaterialize.waves
 ```
 ```html
-<waves>
-  <button>Click or touch me!</button>
-</waves>
+<button>Click or touch me!
+  <waves></waves>
+</button>
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/waves) - [source for demo](dev/waves.vue) - [doc: vue-comps-waves](https://github.com/vue-comps/vue-comps-waves)
 
@@ -548,6 +548,13 @@ length | Number | 0 | maximum length of input
 
 #### Events <sup>[top^](#table-of-contents)</sup>
 `focus` and `blur` are pass-through
+
+## Changelog
+
+- 0.3.0  
+`vue-comps-waves` changes to attach to parent instead of being the parent  
+`collapsible` header element now is `a` instead of `div`  
+`dropdown` will be positioned as a sibling instead of child
 
 ## License
 Copyright (c) 2015 Paul Pflugradt
