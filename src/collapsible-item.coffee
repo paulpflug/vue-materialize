@@ -1,2 +1,7 @@
 # out: ../collapsible-item.js
-module.exports = require "vue-collapsible/collapsible-item"
+ci = require "vue-collapsible/collapsible-item"
+ci.template = ci.template
+  .replace(/div :class=header/,"a :class=header")
+  .replace(/header<\/slot><\/div/,"header<\/slot><\/a")
+console.log ci.template
+module.exports = ci
