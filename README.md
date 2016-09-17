@@ -299,11 +299,11 @@ components:
 </fab>
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/fixed-action-button) - [source for demo](dev/fixed-action-button.vue) - [doc: vue-fixed-action-button](https://github.com/vue-comps/vue-fixed-action-button)
-
 #### Additional props <sup>[top^](#table-of-contents)</sup>
-| Name | type | default | description |
-| ---:| --- | ---| --- |
-| horizontal | Boolean | false | adds horizontal to class of `div` |
+Name | type | default | description
+---:| --- | ---| ---
+horizontal | Boolean | false | opens to the left
+other-side | Boolean | false | opens to the bottom (or right with horizontal)
 
 ### material-box <sup>[top^](#table-of-contents)</sup>
 ```coffee
@@ -342,6 +342,10 @@ components:
 </button>
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/modal) - [source for demo](dev/modal.vue) - [doc: vue-comps-modal](https://github.com/vue-comps/vue-comps-modal)
+#### Additional props <sup>[top^](#table-of-contents)</sup>
+Name | type | default | description
+---:| --- | ---| ---
+bottom-sheet | Boolean | false | opens from the bottom (see [demo](https://paulpflug.github.io/vue-materialize/#!/modal) )
 
 ### parallax <sup>[top^](#table-of-contents)</sup>
 ```coffee
@@ -552,12 +556,17 @@ length | Number | 0 | maximum length of input
 ## Changelog
 
 - 0.3.0  
-`side-nav` and `modal` now have `zIndex` prop  
-`modal` remove `close` event listening in preperation for `2.0.0`  
-`vue-icons` changed positioning again  
-`vue-comps-waves` changes to attach to parent instead of being the parent  
-`collapsible` header element now is `a` instead of `div`  
-`dropdown` will be positioned as a sibling instead of child  
+
+`vue-collapsible` updated to `1.0.1` [changelog](https://github.com/vue-collapsible/vue-side-nav#changelog)  
+`vue-side-nav` updated to `1.1.0` [changelog](https://github.com/vue-comps/vue-side-nav#changelog)  
+`vue-fixed-action-button` updated to `1.1.0` [changelog](https://github.com/vue-comps/vue-fixed-action-button#changelog)  
+added `other-side` prop for `vue-materialize/fixed-action-button`  
+`vue-comps-waves` updated to `1.0.0` [changelog](https://github.com/vue-comps/vue-comps-waves#changelog)  
+`vue-icons` updated to `1.4.1` [changelog](https://github.com/vue-comps/vue-icons#changelog)  
+`vue-scrollfire` updated to `1.0.0` [changelog](https://github.com/vue-comps/vue-comps-scrollfire#changelog)  
+`vue-comps-tooltip` updated to `1.0.0` [changelog](https://github.com/vue-comps/vue-comps-tooltip#changelog)  
+`vue-comps-modal` updated to `1.1.1` [changelog](https://github.com/vue-comps/vue-comps-modal#changelog)  
+`vue-comps-dropdown` updated to `1.2.1` [changelog](https://github.com/vue-comps/vue-comps-dropdown#changelog)  
 
 ## License
 Copyright (c) 2015 Paul Pflugradt

@@ -1,88 +1,105 @@
 # out: ../tooltip.js
 Velocity = require("velocity-animate")
 tooltip = require "vue-comps-tooltip"
-tooltip.props.class.default = -> ["material-tooltip"]
-tooltip.props.backdropStyle =
-  type:Object
-  default: ->
-    display: "block"
-    width: null
-    height: null
-    borderRadius: null
-    transformOrigin: null
-    marginTop: null
-    marginLeft: null
-tooltip.template = """
-  <div :style=computedStyle v-if=opened v-el:tt v-bind:class=class style="display:block">
-    <div class="backdrop" :style="backdropStyle"></div>
-    <slot>No content</slot>
-  </div>"""
-tooltip.props.transitionIn.default = ({el,pos,style,cb}) ->
-  backdrop = el.firstElementChild
-  width = el.clientWidth
-  move = {opacity:1}
-  if pos == "s"
-    @backdropStyle.width = null
-    @backdropStyle.height = null
-    @backdropStyle.borderRadius = null
-    @backdropStyle.transformOrigin = '50% 20%'
-    @backdropStyle.marginTop = null
-    @backdropStyle.marginLeft = width/2 - backdrop.offsetWidth + "px"
-    move.marginTop = "10px"
-  else if pos == "n"
-    @backdropStyle.width = null
-    @backdropStyle.height = null
-    @backdropStyle.borderRadius = '14px 14px 0 0'
-    @backdropStyle.transformOrigin = '50% 124%'
-    @backdropStyle.marginTop = el.offsetHeight + "px"
-    @backdropStyle.marginLeft = width/2 - backdrop.offsetWidth + "px"
-    move.marginTop = "-10px"
-  else if pos == "w"
-    @backdropStyle.width = '14px'
-    @backdropStyle.height = '14px'
-    @backdropStyle.borderRadius = '14px 0 0 14px'
-    @backdropStyle.transformOrigin = '120% 50%'
-    @backdropStyle.marginTop = null
-    @backdropStyle.marginLeft = width + "px"
-    move.marginLeft = "-10px"
-  else if pos == "e"
-    @backdropStyle.width = '14px'
-    @backdropStyle.height = '14px'
-    @backdropStyle.borderRadius = '0 14px 14px 0'
-    @backdropStyle.transformOrigin = '8% 50%'
-    @backdropStyle.marginTop = null
-    @backdropStyle.marginLeft = 0
-    move.marginLeft = "10px"
-  if pos == "s" or pos == "n"
-    scale = width / 8
-    scale = 8 if scale < 8
-  else
-    scale = width / 10
-    scale = 6 if scale < 6
-  @mergeStyle.top = style.top
-  @mergeStyle.left = style.left
-  @$nextTick ->
-    Velocity backdrop, "stop"
-    Velocity backdrop, {opacity:1}, {duration: 55, delay: 0, queue: false}
-    Velocity backdrop, {scale:scale}, {duration: 300, delay: 50, queue: false}
-    Velocity el, "stop"
-    Velocity el, move, {
-      duration: 300
-      queue: false
-      easing: 'easeOutQuad'
-      complete: cb
-    }
-tooltip.props.transitionOut.default = ({el,cb}) ->
+clone = require "lodash/clone"
+cancel = (el) ->
   backdrop = el.firstElementChild
   Velocity backdrop, "stop"
-  Velocity backdrop, {scale:1,opacity:0}, {
-    duration: 255
-    queue: false
-  }
   Velocity el, "stop"
-  Velocity el, {opacity: 0, marginTop: 0, marginLeft: 0}, {
-    duration: 225
-    queue: false
-    complete: cb
-  }
-module.exports = tooltip
+tt =
+  template: """
+    <div :style=computedStyle v-if=opened v-el:tt v-bind:class=computedClass style="display:block" v-bind:id="id" v-bind:transition="cTransition">
+      <div class="backdrop" style="display: block; transform-origin: 50% 50%" v-bind:style="bStyle"></div>
+      <slot></slot>
+    </div>"""
+  mixins: tooltip.mixins
+  methods: tooltip.methods
+  computed: tooltip.computed
+  beforeDestroy: tooltip.beforeDestroy
+  ready: tooltip.ready
+  data: ->
+    direction: ""
+    width: null
+    height: null
+    top: null
+    left: null
+    bStyle: null
+  props: clone(tooltip.props)
+  watch: tooltip.watch
+  transitions:
+    default:
+      enter: (el, done) ->
+        backdrop = el.firstElementChild
+        height = el.clientHeight
+        width = el.clientWidth
+        switch @direction
+          when "s"
+            elstyle = marginTop: "10px", marginLeft: 0
+            bStyle =
+              borderRadius: "0 0 14px 14px"
+              left: width/2 - 7 + "px"
+              transformOrigin: '50% 0'
+              top: 0
+          when "n"
+            elstyle = marginTop: "-10px", marginLeft: 0
+            bStyle =
+              borderRadius: "14px 14px 0 0"
+              left: width/2 - 7 + "px"
+              bottom: 0
+              transformOrigin: '50% 100%'
+          when "w"
+            elstyle = marginTop: 0, marginLeft: "-10px"
+            bStyle =
+              borderRadius: "14px 0 0 14px"
+              right: 0
+              top: height/2 - 3.5 + "px"
+              transformOrigin: '100% 50%'
+          when "e"
+            elstyle = marginTop: 0, marginLeft: "10px"
+            bStyle =
+              borderRadius: "0 14px 14px 0"
+              left: 0
+              top: height/2 - 3.5 + "px"
+              transformOrigin: '0% 50%'
+        scaleX = Math.SQRT2 * width / 14
+        scaleY = Math.SQRT2 * height / 7
+        @bStyle = bStyle
+        @$nextTick ->
+          Velocity el, elstyle, {
+            duration: 350
+            queue: false
+            complete: done
+          }
+          Velocity el, {opacity:1}, {
+            duration: 300
+            delay: 50
+            queue: false
+          }
+          Velocity backdrop, {opacity:1}, {
+            duration: 55
+            delay: 0
+            queue: false
+          }
+          Velocity backdrop, {scaleX: scaleX, scaleY: scaleY}, {
+            duration: 300
+            delay: 50
+            queue: false
+            easing: 'easeInOutQuad'
+          }
+      leave: (el, done) ->
+        backdrop = el.firstElementChild
+        Velocity backdrop, {scaleX:1,scaleY:1,opacity:0}, {
+          duration: 255
+          queue: false
+        }
+        Velocity el, {opacity: 0, marginTop: 0, marginLeft: 0}, {
+          duration: 225
+          queue: false
+          complete: done
+        }
+      leaveCancelled: cancel
+      enterCancelled: cancel
+
+tt.props.class.default = -> ["material-tooltip"]
+
+module.exports = tt

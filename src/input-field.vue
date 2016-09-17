@@ -19,12 +19,14 @@ div(
     @keyup.enter="onConfirmTrigger"
     )
   label(
-    v-if="label && !textarea"
+    v-if="(label || type=='search') && !textarea"
     style="pointer-events: none"
     v-bind:class="{active: isActive}"
     v-bind:data-error="dataError"
     v-bind:data-success="dataSuccess"
   ) {{label}}
+    slot(name="label")
+  slot(name="iconafter")
   span.character-counter(
     v-if="length > 0 && !textarea"
     style="float:right;font-size:12px;height:0px"

@@ -1,25 +1,17 @@
 # out: ../collapsible.js
+c = require "vue-collapsible/collapsible"
+#module.exports = c
 Velocity = require("velocity-animate")
-comp = require "vue-collapsible/collapsible"
-comp.mixins = [require("vue-mixins/setCss")]
-comp.props.transitionIn.default = ({el,cb}) ->
-  Velocity el, "stop"
-  Velocity el, "slideDown",{
-    duration: 350
-    easing: "easeOutQuart"
-    queue: false
-    complete: cb
-    }
-comp.props.transitionOut.default = ({el,cb}) ->
-  Velocity el, "stop"
-  Velocity el, "slideUp",{
-    duration: 350
-    easing: "easeOutQuart"
-    queue: false
-    complete: cb
-    }
-comp.ready = ->
-  for child in @$children
-    if child.isCollapsibleItem
-      @setCss child.$els.body, "display", "block"
+clone = require "lodash/clone"
+comp =
+  template: c.template
+  mixins: c.mixins
+  props: clone(c.props)
+  methods: c.methods
+comp.props.scrollTransition.default = (top) ->
+  body = document.body
+  docEl = document.documentElement
+  scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop
+  scrollTop += top
+  Velocity docEl, "scroll", duration:100, offset:scrollTop
 module.exports = comp

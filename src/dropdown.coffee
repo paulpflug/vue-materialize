@@ -1,28 +1,39 @@
 # out: ../dropdown.js
 Velocity = require("velocity-animate")
-ci = require "vue-comps-dropdown"
-ci.computed ?= {}
-ci.computed.mergeClass = ->
-  return ["dropdown-content"]
-ci.props.transitionIn.default = ({el,cb}) ->
-  Velocity el, "stop"
-  Velocity el, "slideDown",{
-    duration: 300
-    queue: false
-    easing: 'easeOutCubic'
-    complete: cb
-  }
-  Velocity el, {opacity: 1},{
-    duration: 300
-    queue: false
-    easing: 'easeOutSine'
-  }
-ci.props.transitionOut.default = ({el,cb}) ->
-  Velocity el, "stop"
-  Velocity el, {opacity: 0},{
-    duration: 225
-    queue: false
-    easing: 'easeOutSine'
-    complete: cb
-  }
-module.exports = ci
+dropdown = require "vue-comps-dropdown"
+cancel = (el) -> Velocity el, "stop"
+module.exports =
+  template: dropdown.template
+  mixins: dropdown.mixins
+  props: dropdown.props
+  data: dropdown.data
+  computed:
+    cAnchor: dropdown.computed.cAnchor
+    mergeStyle: dropdown.computed.mergeStyle
+    mergeClass: -> return ["dropdown-content"]
+  methods: dropdown.methods
+  ready: dropdown.ready
+  beforeDestroy: dropdown.beforeDestroy
+  transitions:
+    default:
+      enter: (el, done) ->
+        Velocity el, "slideDown",{
+          duration: 300
+          queue: false
+          easing: 'easeOutCubic'
+          complete: done
+        }
+        Velocity el, {opacity: 1},{
+          duration: 300
+          queue: false
+          easing: 'easeOutSine'
+        }
+      leave: (el, done) ->
+        Velocity el, {opacity: 0},{
+          duration: 225
+          queue: false
+          easing: 'easeOutSine'
+          complete: done
+        }
+      leaveCancelled: cancel
+      enterCancelled: cancel

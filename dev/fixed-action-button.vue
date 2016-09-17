@@ -18,6 +18,18 @@
       a.btn-floating 1
     li
       a.btn-floating 2
+  fab(style="top:20px;right:20px" other-side)
+    a.btn-floating.btn-large(slot="fab") bottom
+    li
+      a.btn-floating 1
+    li
+      a.btn-floating 2
+  fab(style="bottom:20px;left:20px",horizontal other-side)
+    a.btn-floating.btn-large(slot="fab") right
+    li
+      a.btn-floating 1
+    li
+      a.btn-floating 2
   a(href="https://github.com/paulpflug/vue-materialize/blob/master/dev/fixed-action-button.vue") source
 </template>
 
