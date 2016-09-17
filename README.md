@@ -558,7 +558,7 @@ length | Number | 0 | maximum length of input
 
 - 0.3.0  
 
-`vue-collapsible` updated to `1.0.1` [changelog](https://github.com/vue-collapsible/vue-side-nav#changelog)  
+`vue-collapsible` updated to `1.0.1` [changelog](https://github.com/vue-comps/vue-collapsible#changelog)  
 `vue-side-nav` updated to `1.1.0` [changelog](https://github.com/vue-comps/vue-side-nav#changelog)  
 `vue-fixed-action-button` updated to `1.1.0` [changelog](https://github.com/vue-comps/vue-fixed-action-button#changelog)  
 added `other-side` prop for `vue-materialize/fixed-action-button`  
