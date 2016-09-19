@@ -16,7 +16,7 @@ m =
   methods: modal.methods
   beforeDestroy: modal.beforeDestroy
   transitions:
-    default:
+    modal:
       enter: (el, done) ->
         if @bottomSheet
           Velocity el, {bottom: "0", opacity: 1}, {

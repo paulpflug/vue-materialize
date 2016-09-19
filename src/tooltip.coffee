@@ -27,7 +27,7 @@ tt =
   props: clone(tooltip.props)
   watch: tooltip.watch
   transitions:
-    default:
+    tooltip:
       enter: (el, done) ->
         backdrop = el.firstElementChild
         height = el.clientHeight

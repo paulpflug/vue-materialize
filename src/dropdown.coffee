@@ -15,7 +15,8 @@ module.exports =
   ready: dropdown.ready
   beforeDestroy: dropdown.beforeDestroy
   transitions:
-    default:
+    dropdown:
+      css: false
       enter: (el, done) ->
         Velocity el, "slideDown",{
           duration: 300

@@ -10,7 +10,7 @@ comp =
   data: ci.data
   methods: ci.methods
   transitions:
-    default:
+    collapsible:
       css: false
       leaveCancelled: cancel
       enterCancelled: cancel
@@ -28,4 +28,7 @@ comp =
           queue: false
           complete: done
           }
+  ready: ->
+    if @isOpened
+      @$el.children[1].style.display = "block"
 module.exports = comp

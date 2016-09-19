@@ -33,7 +33,7 @@ f =
       return null
   props: clone(fab.props)
   transitions:
-    default:
+    fab:
       css: false
       leaveCancelled: cancel
       enterCancelled: cancel

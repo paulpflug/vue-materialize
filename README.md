@@ -217,26 +217,17 @@ components:
 ## whithin your module
 components:
   "card": require("vue-materialize/card")
-  "card-reveal": require("vue-materialize/card-reveal")
-  "card-toggle": require("vue-materialize/card-toggle")
 # or with bundle.js
   "card": window.vueMaterialize.card
-  "card-reveal": window.vueMaterialize.cardReveal
-  "card-toggle": window.vueMaterialize.cardToggle
 ```
 ```html
-<card>
-  <card-toggle class="card-image">
-    // some image
-  </cards-toggle>
-  <div class="card-content">
-    <card-toggle class="card-title">The title</card-toggle>
-    some short content
-  </div>
-  <card-reveal>
-    <card-toggle class="card-title">The revealed title</card-toggle>
-    The revealed content
-  </card-reveal>
+<card class="sticky-action"> <!-- remove sticky-action class for normal action -->
+  <img slot="img" src="http://materializecss.com/images/office.jpg"></img>
+  <span slot="title">Title (click me)</span>
+  <p>Some Content</p>
+  <span slot="revealTitle">Title (click me)</span> <!-- required for reveal to work -->
+  <p slot="reveal">Significantly more Content</p>
+  <a slot="action" href="#card">Some sticky action</a>
 </card>
 ```
 [demo](https://paulpflug.github.io/vue-materialize/#!/card) - [source for demo](dev/card.vue) - [doc: vue-card](https://github.com/vue-comps/vue-card)
@@ -555,6 +546,13 @@ length | Number | 0 | maximum length of input
 `focus` and `blur` are pass-through
 
 ## Changelog
+- 0.4.0  
+`vue-zoombox` updated to `1.0.0` [changelog](https://github.com/vue-comps/vue-zoombox#changelog)  
+`vue-toaster` updated to `1.0.0` [changelog](https://github.com/vue-comps/vue-toaster#changelog)  
+`vue-comps-scrollspy` updated to `1.0.0` [changelog](https://github.com/vue-comps/vue-comps-scrollspy#changelog)  
+`vue-pushpin` updated to `1.0.0` [changelog](https://github.com/vue-comps/vue-pushpin#changelog)  
+`vue-parallax` updated to `1.0.0` [changelog](https://github.com/vue-comps/vue-parallax#changelog)  
+`vue-card` updated to `1.1.0` [changelog](https://github.com/vue-comps/vue-card#changelog)  
 
 - 0.3.0  
 

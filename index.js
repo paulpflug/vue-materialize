@@ -1,6 +1,4 @@
 module.exports = {
-  cardReveal: require("./card-reveal"),
-  cardToggle: require("./card-toggle"),
   card: require("./card"),
   collapsibleItem: require("./collapsible-item"),
   collapsible: require("./collapsible"),
