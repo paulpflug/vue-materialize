@@ -306,7 +306,7 @@ components:
   "material-box": window.vueMaterialize.materialBox
 ```
 ```html
-<material-box style="width:200px",src="some/image.jpg">
+<material-box style="width:200px",src="some/image.jpg",thumb="some/thumb.jpg">
   <span slot="caption" style="color:white">a caption</span>
 </material-box>
 ```
