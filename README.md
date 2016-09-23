@@ -80,7 +80,7 @@ So if you really want to use the import syntax please migrate to webpack 2.
   * [checkbox](#checkbox-top)
   * [switch](#switch-top)
   * [input-field](#input-field-top)
-  * [input-field](#input-field-top-1)
+  * [select](#select-top)
 - [Changelog](#changelog)
 - [License](#license)
 
@@ -547,7 +547,7 @@ length | Number | 0 | maximum length of input
 #### Events <sup>[top^](#table-of-contents)</sup>
 `focus` and `blur` are pass-through
 
-### input-field <sup>[top^](#table-of-contents)</sup>
+### Select <sup>[top^](#table-of-contents)</sup>
 ```coffee
 ## whithin your module
 components:

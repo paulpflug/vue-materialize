@@ -1,7 +1,7 @@
 webpack = require "webpack"
 path = require "path"
 module.exports =
-  entry: "./build/common.coffee"
+  entry: "./build/index.coffee"
   output:
     filename: "bundle.js"
     path: __dirname

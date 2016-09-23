@@ -11,7 +11,7 @@ parallax(src="http://materializecss.com/images/parallax2.jpg")
 </template>
 
 <script>
-import {parallax} from "../index"
+import {parallax} from "../build/index"
 export default {
   components: {
     "parallax": parallax
