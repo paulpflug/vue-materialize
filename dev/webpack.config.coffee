@@ -26,4 +26,4 @@ module.exports =
     new webpack.optimize.DedupePlugin()
   ]
   callbackLoader:
-    require("vue-icons/icon-loader")(["material-cancel","fa-user","fa-key"])
+    require("vue-icons/icon-loader")(["material-cancel","fa-user","fa-key","material-close","material-search"])

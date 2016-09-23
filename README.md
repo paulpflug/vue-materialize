@@ -15,7 +15,6 @@
 ### What is missing:
 
 - carousel
-- select
 - range & slider
 - file-input
 - tabs
@@ -142,8 +141,6 @@ $roboto-font-path: "~materialize-css/fonts/roboto/";
 @import "~materialize-css/sass/components/navbar";
 @import "~materialize-css/sass/components/preloader";
 @import "~vue-materialize/sass/forms";
-@import "~materialize-css/sass/components/forms/checkboxes";
-@import "~materialize-css/sass/components/forms/radio-buttons";
 
 // css for js modules
 // activate only what you need
@@ -154,7 +151,12 @@ $roboto-font-path: "~materialize-css/fonts/roboto/";
 @import "~materialize-css/sass/components/collapsible";
 @import "~materialize-css/sass/components/table_of_contents"; // scrollspy
 @import "~materialize-css/sass/components/forms/input-fields";
+// ----- no js but need to be after input-fields
+@import "~materialize-css/sass/components/forms/checkboxes";
+@import "~materialize-css/sass/components/forms/radio-buttons";
+// -----
 @import "~materialize-css/sass/components/forms/switches";
+@import "~materialize-css/sass/components/forms/select"; // need to be after input-fields
 @import "~materialize-css/sass/components/toast";
 @import "~materialize-css/sass/components/tooltip";
 
@@ -164,7 +166,6 @@ $roboto-font-path: "~materialize-css/fonts/roboto/";
 // @import "~materialize-css/sass/components/date_picker/default";
 // @import "~materialize-css/sass/components/date_picker/default.date";
 // @import "~materialize-css/sass/components/date_picker/default.time";
-// @import "~materialize-css/sass/components/forms/select";
 // @import "~materialize-css/sass/components/forms/file-input";
 // @import "~materialize-css/sass/components/forms/range";
 ```
@@ -545,7 +546,28 @@ length | Number | 0 | maximum length of input
 #### Events <sup>[top^](#table-of-contents)</sup>
 `focus` and `blur` are pass-through
 
+### input-field <sup>[top^](#table-of-contents)</sup>
+```coffee
+## whithin your module
+components:
+  "v-select": require("vue-materialize/select")
+  "v-option": require("vue-materialize/select-option")
+# or with bundle.js
+  "v-select": window.vueMaterialize.select
+  "v-option": window.vueMaterialize.selectOption
+```
+```html
+<v-select :value="value" @input="onInput">
+  <v-option value="1">option 1/<v-option>
+  <v-option value="2">option 2</v-option>
+</v-select>
+```
+[demo](https://paulpflug.github.io/vue-materialize/#!/forms/select) - [source for demo](dev/forms/select.vue) - [doc: vue-simple-select](https://github.com/vue-comps/vue-simple-select)
+
 ## Changelog
+- 0.4.1
+added `vue-simple-select` as `select` - this need a reordering of the scss (see [SCSS](https://github.com/paulpflug/vue-materialize#configure-scss-top))
+
 - 0.4.0  
 `vue-zoombox` updated to `1.0.0` [changelog](https://github.com/vue-comps/vue-zoombox#changelog)  
 `vue-toaster` updated to `1.0.0` [changelog](https://github.com/vue-comps/vue-toaster#changelog)  
@@ -555,7 +577,6 @@ length | Number | 0 | maximum length of input
 `vue-card` updated to `1.1.0` [changelog](https://github.com/vue-comps/vue-card#changelog)  
 
 - 0.3.0  
-
 `vue-collapsible` updated to `1.0.1` [changelog](https://github.com/vue-comps/vue-collapsible#changelog)  
 `vue-side-nav` updated to `1.1.0` [changelog](https://github.com/vue-comps/vue-side-nav#changelog)  
 `vue-fixed-action-button` updated to `1.1.0` [changelog](https://github.com/vue-comps/vue-fixed-action-button#changelog)  

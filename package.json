@@ -7,7 +7,7 @@
     "name": "Paul Pflugradt",
     "email": "paul.pflugradt@gmail.com"
   },
-  "main": "index.js",
+  "main": "build/common.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/paulpflug/vue-materialize"
@@ -38,7 +38,8 @@
     "vue-drag-handle": "^1.0.1",
     "vue-zoombox": "^1.0.0",
     "vue-textarea": "^1.0.0",
-    "vue-toggle": "^1.0.1"
+    "vue-toggle": "^1.0.1",
+    "vue-simple-select": "^1.0.0"
   },
   "devDependencies": {
     "callback-loader": "^0.2.4",

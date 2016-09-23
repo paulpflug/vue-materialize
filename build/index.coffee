@@ -1,4 +1,5 @@
-window.vueMaterialize ?= {}
+# out: ./index.js
+materialize = {}
 
 camelize = (str) ->
   str.replace /-(\w)/g, (_, c) ->
@@ -11,6 +12,7 @@ for name in [
     "collapsible"
     "dropdown"
     "fixed-action-button"
+    "icon"
     "input-field"
     "material-box"
     "modal"
@@ -19,12 +21,18 @@ for name in [
     "scrollfire"
     "scrollspy-item"
     "scrollspy"
+    "select-option"
+    "select"
     "side-nav"
     "switch"
     "toaster"
     "tooltip"
     "waves"
     ]
-  window.vueMaterialize[camelize(name)] = req("./#{name}.js")
+  materialize[camelize(name)] = req("./#{name}.js")
 
 require('./materialize.config.scss')
+if module.exports != null
+  module.exports = materialize
+else
+  window.vueMaterialize = materialize

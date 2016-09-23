@@ -11,3 +11,46 @@ label {
   font-size: $label-font-size;
   color: $input-border-color;
 }
+
+.select-dialog .input-field {
+  margin: 0 auto;
+  float: none;
+  input[type=search] {
+    margin-bottom: 0;
+  }
+  i {
+    line-height: 50px;
+  }
+  label {
+    top: 0;
+    &.active {
+      transform: translateY(0);
+    }
+  }
+}
+
+.select-dialog li {
+  img {
+    height: $dropdown-item-height - 10;
+    width: $dropdown-item-height - 10;
+    margin: 5px 15px;
+    float: right;
+  }
+  &.optgroup {
+    color: $select-disabled-color;
+    background-color: transparent;
+    border-top: 1px solid $dropdown-hover-bg-color;
+
+    &.selected > span {
+      color: rgba(0, 0, 0, .7);
+    }
+
+    & > span {
+      color: rgba(0, 0, 0, .4);
+    }
+
+    & ~ li.optgroup-option {
+      padding-left: 1rem;
+    }
+  }
+}
