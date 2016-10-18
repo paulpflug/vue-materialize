@@ -11,7 +11,7 @@ parallax(src="http://materializecss.com/images/parallax2.jpg")
 </template>
 
 <script>
-import {parallax} from "../build/index"
+import {parallax} from "../build/bundle.js"
 export default {
   components: {
     "parallax": parallax

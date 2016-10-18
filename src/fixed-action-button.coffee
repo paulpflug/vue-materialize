@@ -38,11 +38,8 @@ f =
       leaveCancelled: cancel
       enterCancelled: cancel
       enter: (el,done) ->
-        complete = =>
-          @$emit "opened"
-          done()
         @setCss el, "visibility", "visible"
-        return complete() if el.children.length == 0
+        return done() if el.children.length == 0
         time = 0
         style = opacity: 1, scaleX: 1, scaleY: 1
         if @horizontal
@@ -56,7 +53,7 @@ f =
             delay: time
             easing: "easeInOutCubic"
           }
-          options.complete = complete if last
+          options.complete = done if last
           Velocity.hook el, "scaleX", 0.3
           Velocity.hook el, "scaleY", 0.3
           Velocity.hook el, "translate"+type, @fac*40+'px'
@@ -69,10 +66,7 @@ f =
         for i in order
           transIn(el.children[i].firstElementChild,i==0)
       leave: (el,done) ->
-        complete = =>
-          @$emit "closed"
-          done()
-        return complete() if el.children.length == 0
+        return done() if el.children.length == 0
         style = opacity: 0, scaleX: 0.3, scaleY: 0.3
         if @horizontal
           type = "X"
@@ -84,9 +78,8 @@ f =
             duration: 80
             easing: "easeInOutCubic"
           }
-          #options.complete = cb if last
-          if last
-            setTimeout complete,250
+          #options.complete = done if last
+          setTimeout(done,250) if last
           Velocity el, style, options
         for i in [el.children.length-1..0]
           transOut(el.children[i].firstElementChild,i==0)

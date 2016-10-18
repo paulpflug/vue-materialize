@@ -1,5 +1,4 @@
 <template lang="pug">
-
 .container
   p
     a(href="https://github.com/paulpflug/vue-materialize/blob/master/dev/toaster.vue") source
@@ -10,21 +9,19 @@
 
   p drag toasts to dismiss
   p hover toast to keep it open
-
 </template>
 
 <script lang="coffee">
 module.exports =
   mixins:[
-    require("vue-mixins/getVue")
+    require("vue-mixins/vue")
     require("../src/toaster.coffee")
   ]
   beforeCompile: ->
-    Vue = @getVue()
-    Vue.use(require('vue-touch'))
+    @Vue.use(require('vue-touch'))
   methods:
     normaltoast: ->
       @toast text:"I am toast"
     roundedtoast: ->
-      @toast text:"I am round toast", classes: ["toast","rounded"]
+      @toast text:"I am round toast", class: ["toast","rounded"]
 </script>

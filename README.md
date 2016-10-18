@@ -566,8 +566,13 @@ components:
 [demo](https://paulpflug.github.io/vue-materialize/#!/forms/select) - [source for demo](dev/forms/select.vue) - [doc: vue-simple-select](https://github.com/vue-comps/vue-simple-select)
 
 ## Changelog
-- 0.4.1
-added `vue-simple-select` as `select` - this need a reordering of the scss (see [SCSS](https://github.com/paulpflug/vue-materialize#configure-scss-top))
+- 0.5.0  
+`vue-toaster` updated to `1.1.0`   [changelog](https://github.com/vue-comps/vue-toaster#changelog)  
+moved `vue-icons` to `devDependencies`  
+pointing main to `build/index.js`
+
+- 0.4.1  
+added `vue-simple-select` as `select` - this need a reordering of the scss (see [SCSS](https://github.com/paulpflug/vue-materialize#configure-scss-top))  
 
 - 0.4.0  
 `vue-zoombox` updated to `1.0.0` [changelog](https://github.com/vue-comps/vue-zoombox#changelog)  

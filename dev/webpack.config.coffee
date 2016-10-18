@@ -11,19 +11,12 @@ module.exports =
       { test: /\.ttf\??(\d*)$/,    loader: "file-loader" }
       { test: /\.eot\??(\d*)$/,    loader: "file-loader" }
       { test: /\.svg\??(\d*)$/,    loader: "file-loader" }
-      { test: /\.scss$/, loader: "style!css!sass?sourceMap"}
+      { test: /\.scss$/, loader: "style!css!sass"}
     ]
     postLoaders: [
       { test: /vue-icons/, loader: "callback-loader"}
     ]
   resolve:
     extensions: ["",".webpack.js",".web.js",".js",".coffee",".vue"]
-    alias:
-      "vue-mixins": path.resolve(path.join(__dirname, "..","node_modules", "vue-mixins"))
-      "vue-filters": path.resolve(path.join(__dirname, "..","node_modules", "vue-filters"))
-      "velocity-animate": path.resolve(path.join(__dirname, "..","node_modules", "velocity-animate"))
-  plugins: [
-    new webpack.optimize.DedupePlugin()
-  ]
   callbackLoader:
     require("vue-icons/icon-loader")(["material-cancel","fa-user","fa-key","material-close","material-search"])

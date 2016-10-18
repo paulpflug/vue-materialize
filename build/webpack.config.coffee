@@ -12,7 +12,7 @@ module.exports =
       { test: /\.ttf\??(\d*)$/,    loader: "file-loader" }
       { test: /\.eot\??(\d*)$/,    loader: "file-loader" }
       { test: /\.svg\??(\d*)$/,    loader: "file-loader" }
-      { test: /\.scss$/, loader: "style!css!sass?sourceMap"}
+      { test: /\.scss$/, loader: "style!css!sass"}
     ]
   plugins: [
     new webpack.optimize.DedupePlugin()

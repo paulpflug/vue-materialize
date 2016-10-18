@@ -12,7 +12,6 @@ for name in [
     "collapsible"
     "dropdown"
     "fixed-action-button"
-    "icon"
     "input-field"
     "material-box"
     "modal"
@@ -33,6 +32,7 @@ for name in [
 
 require('./materialize.config.scss')
 if module.exports != null
+  #materialize.icon = req("./icon")
   module.exports = materialize
 else
   window.vueMaterialize = materialize

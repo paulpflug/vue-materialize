@@ -2,7 +2,7 @@
 select = require "vue-simple-select"
 clone = require "lodash/clone"
 t = select.template
-  .replace("{{content}}","<input type=text class=select-dropdown readonly :value=content tabindex=-1 :disabled=disabled>")
+  .replace("<template v-if=unsafe>{{{content}}}</template><template v-else=v-else>{{content}}</template>","<input type=text class=select-dropdown readonly :value=content tabindex=-1 :disabled=disabled>")
   .replace("class=select-list","class='select-list dropdown-content' style='display:block;opacity:1;position:relative'")
 
 s =
