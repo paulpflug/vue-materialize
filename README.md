@@ -24,10 +24,13 @@
 
 ```sh
 npm install --save-dev vue-materialize
-// webpack
+## When using with webpack (recommended)
+# webpack
 npm install --save-dev webpack
-// style loaders
-npm install --save-dev style-loader css-loader sass-loader url-loader file-loader
+# style loaders
+npm install --save-dev style-loader css-loader sass-loader url-loader file-loader vue-style-loader
+# node-sass
+npm install --save-dev node-sass
 ```
 or include `build/bundle.js` (comes with npm install - 159kb - includes `Velocity.js`)
 
@@ -566,7 +569,7 @@ components:
 [demo](https://paulpflug.github.io/vue-materialize/#!/forms/select) - [source for demo](dev/forms/select.vue) - [doc: vue-simple-select](https://github.com/vue-comps/vue-simple-select)
 
 ## Changelog
-- 0.5.0  
+- 1.0.0  
 `vue-toaster` updated to `1.1.0`   [changelog](https://github.com/vue-comps/vue-toaster#changelog)  
 moved `vue-icons` to `devDependencies`  
 pointing main to `build/index.js`
