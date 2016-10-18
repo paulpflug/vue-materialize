@@ -83,7 +83,7 @@ So if you really want to use the import syntax please migrate to webpack 2.
   * [checkbox](#checkbox-top)
   * [switch](#switch-top)
   * [input-field](#input-field-top)
-  * [select](#select-top)
+  * [Select](#select-top)
 - [Changelog](#changelog)
 - [License](#license)
 
