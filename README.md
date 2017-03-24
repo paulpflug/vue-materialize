@@ -1,3 +1,5 @@
+# DEPRECATED see [cerijs](https://github.com/cerijs) and [ceri-materialize](https://github.com/ceri-comps/ceri-materialize)
+
 # vue-materialize
 
 [materializeCss](http://materializecss.com/) styles for [vue-comps](https://github.com/vue-comps).
